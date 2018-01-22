@@ -10,5 +10,9 @@ client.on('message', message => {
     	message.channel.sendMessage('pong');
     }
 });
+if (message.content.startsWith(prefix + 'testcomando')) {
+        message.guild.channels.find("name", "canal-r37j");
+    }
+});
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);
