@@ -17,7 +17,7 @@ client.on('message', message => {
 });
 client.on('message', message => {
     if (message.content.startsWith(prefix + 'noticeame')) {
-        message.member.addRole(guild.roles.find("name", "ad");
+        message.member.addRole(message.guild.roles.find("name", "ad");
     }
 });
 // THIS  MUST  BE  THIS  WAY
