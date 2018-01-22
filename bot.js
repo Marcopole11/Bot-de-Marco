@@ -18,6 +18,13 @@ client.on('message', message => {
 client.on('message', message => {
     if (message.content.startsWith(prefix + 'noticeame')) {
         message.member.addRole(message.guild.roles.find("name", "ad"), "comando");
+        message.channel.sendMessage('Ahora serás avisado cuando salga directo ^-^/');
+    }
+});
+client.on('message', message => {
+    if (message.content.startsWith(prefix + 'unnoticeame')) {
+        message.member.removeRole(message.guild.roles.find("name", "ad"), "comando");
+        message.channel.sendMessage('Perdona a Mitto-kun, a veces es un poco pesado u_u7');
     }
 });
 // THIS  MUST  BE  THIS  WAY
