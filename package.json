@@ -1,6 +1,6 @@
 {
-  "name": "marcoBot",
-  "description": "Esclavo de Marco",
+  "name": "Test",
+  "description": "Test",
   "version": "0.0.0",
   "main": "bot.js",
   "scripts": {
