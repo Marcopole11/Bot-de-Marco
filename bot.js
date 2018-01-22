@@ -10,7 +10,8 @@ client.on('message', message => {
     	message.channel.sendMessage('pong');
     }
 });
-if (message.content.startsWith(prefix + 'testcomando')) {
+client.on('message', message => {
+    if (message.content.startsWith(prefix + 'testcomando')) {
         message.guild.channels.find("name", "canal-r37j");
     }
 });
