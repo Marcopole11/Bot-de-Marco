@@ -27,5 +27,10 @@ client.on('message', message => {
         message.channel.sendMessage('Perdona a Mitto-kun, a veces es un poco pesado u_u7');
     }
 });
+client.on('message', message => {
+    if (message.content.startsWith(prefix + 'analiza')) {
+        message.channel.sendMessage('the server id is' + message.guild.id);
+    }
+});
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);
