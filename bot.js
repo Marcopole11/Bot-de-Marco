@@ -1,4 +1,4 @@
-const Discord = require('discord.io');
+const Discord = require('discord.js');
 const client = new Discord.Client();
 
 client.on('ready', () => {
@@ -7,9 +7,9 @@ client.on('ready', () => {
 
 client.on('message', message => {
     if (message.content === 'ping') {
-        message.reply('pong');
-    }
+    	message.reply('pong');
+  	}
 });
 
-//this must be this way
+// THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);
