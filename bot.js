@@ -29,7 +29,7 @@ client.on('message', message => {
 });
 client.on('message', message => {
     if (message.content.startsWith(prefix + 'analiza')) {
-        message.channel.sendMessage('the server id is' + message.guild.id);
+        message.channel.sendMessage('the server id is' + message.guild.createdTimestamp);
     }
 });
 // THIS  MUST  BE  THIS  WAY
