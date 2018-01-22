@@ -29,13 +29,9 @@ client.on('message', message => {
 });
 client.on('message', message => {
     if (message.content.startsWith(prefix + 'analiza')) {
-        message.channel.sendMessage('the server id is' + message.guild.createdTimestamp);
+        message.channel.sendMessage('La id del server es ' + message.guild.createdTimestamp + '\n ' + message.content);
     }
 });
-client.on('message', message => {
-    if (message.content.startsWith(prefix + 'serverping')) {
-        message.client.guilds.find('createdTimestamp', '1466535373779').channels.find('name', 'general').message.channel.sendMessage('Pong!');
-    }
-});
+
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);
