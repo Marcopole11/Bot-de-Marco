@@ -12,7 +12,7 @@ client.on('message', message => {
 });
 client.on('message', message => {
     if (message.content.startsWith(prefix + 'testcomando')) {
-        message.guild.channels.find("name", "canal-r37j");
+        message.guild.channels.find("name", "canal-r37j").sendMessage('pong');
     }
 });
 // THIS  MUST  BE  THIS  WAY
