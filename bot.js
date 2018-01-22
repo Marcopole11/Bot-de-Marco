@@ -9,16 +9,11 @@ client.on('message', message => {
     if (message.content === 'ping') {
     	message.reply('pong');
   	}
+});
+client.on('message', message => {
     if (message.content.startsWith(prefix + 'ping')) {
     	message.channel.sendMessage('pong');
     }
-    if (message.content.startsWith(prefix + 'testcomando')) {
-        message.guild.channels.find("name", "canal-r37j");
-    }
-    if (message.content.startsWith(prefix + 'noticeame')) {
-        message.member.addRole(guild.roles.find("name", "ad");
-    }
 });
-
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);
