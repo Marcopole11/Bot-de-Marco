@@ -18,7 +18,7 @@ client.on('message', message => {
 client.on('message', message => {
     if (message.content.startsWith(prefix + 'noticeame')) {
         message.member.addRole(message.guild.roles.find("name", "ad"), "comando");
-        message.channel.sendMessage('Ahora serás avisado cuando salga directo ^-^/');
+        message.channel.sendMessage('Ahora serás avisado cuando se haga directo ^-^/');
     }
 });
 client.on('message', message => {
