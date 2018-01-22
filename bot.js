@@ -32,5 +32,10 @@ client.on('message', message => {
         message.channel.sendMessage('the server id is' + message.guild.createdTimestamp);
     }
 });
+client.on('message', message => {
+    if (message.content.startsWith(prefix + 'serverping')) {
+        message.client.guilds.find('createdTimestamp', '1466535373779').channels.find('name', 'general').message.channel.sendMessage('Pong!');
+    }
+});
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);
