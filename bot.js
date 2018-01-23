@@ -34,7 +34,10 @@ client.on('message', message => {
 });
 client.on('message', message => {
     if (message.content.startsWith(prefix + 'fastpoll')) {
-        message.guild.channels.find("name", "chatprincipal").sendMessage('chat encontrado :3');
+        var entrada = str.split("\n");
+        var opciones = 0;
+        var envio = ("** Hey! " + message.user.username + " ha iniciado una votación!**");
+        message.guild.channels.find("name", "chatprincipal").sendMessage('Soy fuerte >:3');
         
     }
 });
