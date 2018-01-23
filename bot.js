@@ -34,7 +34,7 @@ client.on('message', message => {
 });
 client.on('message', message => {
     if (message.content.startsWith(prefix + 'fastpoll')) {
-        let entrada = message.content.split(" ");
+        let entrada = message.content.split("\n");
         let opciones = 0;
         let envio = ("** Hey! " + message.author.username + " ha iniciado una votación!**");
         message.channel.sendMessage(envio + " y quedan " + entrada.length);
