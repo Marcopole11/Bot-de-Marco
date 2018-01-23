@@ -57,7 +57,7 @@ client.on('message', message => {
         opciones = 0;
         envio = ("** Hey! " + message.user.username + " ha iniciado una votación!**");
         message.guild.channels.find("name", "chatprincipal").sendMessage('Soy fuerte >:3');
-        for(lain = 1; lain < entrada.length; lain++){
+        for(lain = 0; lain < entrada.length; lain++){
             if(entrada[lain].startsWith('- ')){
                 opciones = opciones + 1;
                 envio = (envio + "opt" + entrada[lain].slice(1));
