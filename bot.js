@@ -41,15 +41,18 @@ client.on('message', message => {
             message.channel.sendMessage(envio);
             if(entrada[lain].startsWith('- ')){
                 opciones = opciones + 1;
-                envio = (envio + "opt" + entrada[lain].slice(1));
+                envio = (envio + "\nopt" + entrada[lain].slice(1));
             } else {
-                envio = envio + entrada[lain];
+                envio = (envio + "\n" + entrada[lain]);
             }
         }
         message.guild.channels.find("name", "chatprincipal").sendMessage(envio);
     }
 });
-
+client.on('message', message => {
+    if (message.content.startsWith(prefix + 'fastpoll')) {
+}
+});
 /*
 client.on('message', message => {
     if (message.content.startsWith(prefix + 'fastpoll')) {
