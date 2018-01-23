@@ -37,7 +37,16 @@ client.on('message', message => {
         let entrada = message.content.split(" ");
         let opciones = 0;
         let envio = ("** Hey! " + message.author.username + " ha iniciado una votación!**");
-        message.channel.sendMessage('Soy fuerte >:3');
+        message.channel.sendMessage('Si, soy fuerte >:3');
+        for(let lain = 1; lain < entrada.length; lain++){
+            if(entrada[lain].startsWith('- ')){
+                opciones = opciones + 1;
+                envio = (envio + "opt" + entrada[lain].slice(1));
+            } else {
+                envio = envio + entrada[lain];
+            }
+        }
+        message.guild.channels.find("name", "chatprincipal").sendMessage(envio);
     }
 });
 
