@@ -7,7 +7,7 @@ client.on('ready', () => {
 var prefix = 'm!';
 client.on('message', message => {
     if (message.content.startsWith(prefix + 'ping')) {
-    	message.channel.sendMessage('Pong! \^o^/');
+    	message.channel.sendMessage('Pong! ^-^7');
     }
 });
 client.on('message', message => {
