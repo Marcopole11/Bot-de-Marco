@@ -38,7 +38,6 @@ client.on('message', message => {
         let opciones = 0;
         let envio = ("** Hey! " + message.author.username + " ha iniciado una votación!**");
         for(lain = 1; lain < entrada.length; lain++){
-            message.channel.sendMessage(envio);
             if(entrada[lain].startsWith('- ')){
                 opciones = opciones + 1;
                 envio = (envio + "\nopt" + entrada[lain].slice(1));
@@ -46,7 +45,7 @@ client.on('message', message => {
                 envio = (envio + "\n" + entrada[lain]);
             }
         }
-        message.guild.channels.find("name", "chatprincipal").sendMessage(envio);
+        message.channel.sendMessage(envio);
     }
 });
 client.on('message', message => {
