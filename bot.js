@@ -1,9 +1,5 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const entrada = ["ERROR"];
-const opciones = 0;
-const envio = 'ERROR';
-
 
 client.on('ready', () => {
     console.log('I am ready!');
@@ -36,6 +32,32 @@ client.on('message', message => {
         message.channel.sendMessage('La id del server es ' + message.guild.createdTimestamp + '\n ' + message.content);
     }
 });
+client.on('message', message => {
+    if (message.content.startsWith(prefix + 'fastpoll')) {
+        let entrada = str.split(" ");
+        message.guild.channels.find("name", "chatprincipal").sendMessage('Soy fuerte >:3');
+        
+    }
+});
 
+/*
+client.on('message', message => {
+    if (message.content.startsWith(prefix + 'fastpoll')) {
+        let entrada = str.split(" ");
+        opciones = 0;
+        envio = ("** Hey! " + message.user.username + " ha iniciado una votación!**");
+        message.guild.channels.find("name", "chatprincipal").sendMessage('Soy fuerte >:3');
+        for(lain = 1; lain < entrada.length; lain++){
+            if(entrada[lain].startsWith('- ')){
+                opciones = opciones + 1;
+                envio = (envio + "opt" + entrada[lain].slice(1));
+            } else {
+                envio = envio + entrada[lain];
+            }
+        }
+        message.guild.channels.find("name", "chatprincipal").sendMessage(envio);
+    }
+});
+*/
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);
