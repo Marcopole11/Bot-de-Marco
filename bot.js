@@ -37,9 +37,8 @@ client.on('message', message => {
         let entrada = message.content.split("\n");
         let opciones = 0;
         let envio = ("** Hey! " + message.author.username + " ha iniciado una votación!**");
-        message.channel.sendMessage(envio + " y quedan " + entrada.length);
         for(lain = 1; lain < entrada.length; lain++){
-            message.channel.sendMessage('kiss');
+            message.channel.sendMessage(envio);
             if(entrada[lain].startsWith('- ')){
                 opciones = opciones + 1;
                 envio = (envio + "opt" + entrada[lain].slice(1));
