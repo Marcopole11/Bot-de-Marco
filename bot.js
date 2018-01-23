@@ -34,7 +34,7 @@ client.on('message', message => {
 });
 client.on('message', message => {
     if (message.content.startsWith(prefix + 'fastpoll')) {
-        let entrada = str.split(" ");
+        let entrada = message.content.split(" ");
         message.guild.channels.find("name", "chatprincipal").sendMessage('Soy fuerte >:3');
         
     }
