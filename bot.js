@@ -37,7 +37,7 @@ client.on('message', message => {
         let entrada = message.content.split(" ");
         let opciones = 0;
         let envio = ("** Hey! " + message.author.username + " ha iniciado una votación!**");
-        message.channel.sendMessage(envio);
+        message.channel.sendMessage(envio + " y quedan " + entrada.length);
         for(let lain = 1; lain < entrada.length; lain++){
             if(entrada[lain].startsWith('- ')){
                 opciones = opciones + 1;
