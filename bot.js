@@ -45,7 +45,7 @@ client.on('message', message => {
                 envio = (envio + "\n" + entrada[lain]);
             }
         }
-        message.channel.sendMessage(envio);
+        message.guild.channels.find("name", "chatprincipal").sendMessage(envio);
     }
 });
 client.on('message', message => {
