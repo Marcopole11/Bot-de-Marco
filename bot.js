@@ -49,8 +49,9 @@ client.on('message', message => {
     }
 });
 client.on('message', message => {
-    if (message.content.startsWith(prefix + 'fastpoll')) {
-}
+    if (message.content.startsWith(prefix + 'emote')) {
+        message.channel.sendMessage(message.guild.emojis.find("name", "wut");
+    }
 });
 /*
 client.on('message', message => {
