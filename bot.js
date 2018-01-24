@@ -50,7 +50,8 @@ client.on('message', message => {
 });
 client.on('message', message => {
     if (message.content.startsWith(prefix + 'emote')) {
-        message.channel.sendMessage(message.guild.emojis[2]);
+        message.react(message.guild.emojis[2]);
+        
     }
 });
 /*
