@@ -41,7 +41,7 @@ client.on('message', message => {
         for(lain = 1; lain < entrada.length; lain++){
             if(entrada[lain].startsWith('- ')){
                 opciones = opciones + 1;
-                envio = (envio + message.client.guilds.find("name", "Server secreto de Marco").emojis.find("name", emotinames[opciones]) + "\nopt" + entrada[lain].slice(1));
+                envio = (envio + "\n" + message.client.guilds.find("name", "Server secreto de Marco").emojis.find("name", emotinames[opciones]) + entrada[lain].slice(1));
                 
             } else {
                 envio = (envio + "\n" + entrada[lain]);
