@@ -50,28 +50,13 @@ client.on('message', message => {
 });
 client.on('message', message => {
     if (message.content.startsWith(prefix + 'emote')) {
-        message.react(message.guild.emojis.find("name", "wut"));
-        
+        message.channel.sendMessage(message.client.guilds.array());
     }
 });
 /*
-client.on('message', message => {
-    if (message.content.startsWith(prefix + 'fastpoll')) {
-        let entrada = str.split(" ");
-        opciones = 0;
-        envio = ("** Hey! " + message.user.username + " ha iniciado una votación!**");
-        message.guild.channels.find("name", "chatprincipal").sendMessage('Soy fuerte >:3');
-        for(lain = 0; lain < entrada.length; lain++){
-            if(entrada[lain].startsWith('- ')){
-                opciones = opciones + 1;
-                envio = (envio + "opt" + entrada[lain].slice(1));
-            } else {
-                envio = envio + entrada[lain];
-            }
-        }
-        message.guild.channels.find("name", "chatprincipal").sendMessage(envio);
+    if (message.content.startsWith(prefix + 'emote')) {
+        message.react(message.guild.emojis.find("name", "wut"));
     }
-});
 */
-// THIS  MUST  BE  THIS  WAY
+// THIS  MUST  BE  THE  WAE
 client.login(process.env.BOT_TOKEN);
