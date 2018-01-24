@@ -48,10 +48,12 @@ client.on('message', message => {
                 envio = (envio + "\n" + entrada[lain]);
             }
         }
-        message.guild.channels.find("name", "chatprincipal").sendMessage(envio).then(muss =>{
+        message.guild.channels.find("name", "chatprincipal").sendMessage(envio).then(function (muss) {
             for(lain = 0; lain < opciones; lain++){
                 muss.react(message.client.guilds.find("name", "Server secreto de Marco").emojis.find("name", emotinames[lain]));
             }
+        }).catch(function() {
+          //Something
         });
     }
 });
