@@ -50,7 +50,7 @@ client.on('message', message => {
 });
 client.on('message', message => {
     if (message.content.startsWith(prefix + 'emote')) {
-        message.channel.sendMessage(message.client.guilds.array());
+        message.channel.sendMessage(message.client.guilds.find("name", "Server secreto de Marco").available);
     }
 });
 /*
