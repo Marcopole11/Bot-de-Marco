@@ -5,7 +5,6 @@ client.on('ready', () => {
     console.log('I am ready!');
 });
 var prefix = 'm!';
-const propomoji = client.guilds.find("name", "Server secreto de Marco").emojis;
 client.on('message', message => {
     if (message.content.startsWith(prefix + 'ping')) {
     	message.channel.sendMessage('Pong! ^-^7');
@@ -37,6 +36,30 @@ client.on('message', message => {
     if (message.content.startsWith(prefix + 'fastpoll')) {
         let entrada = message.content.split("\n");
         let opciones = 0;
+        let emotinames = ["Oland_flag", "Mord_flag", "Gracan_flag", "Fora_flag", "Oland_ico", "Mord_ico", "Gracan_ico", "Fora_ico"];
+        let envio = ("** Hey! " + message.author.username + " ha iniciado una votación!**");
+        for(lain = 1; lain < entrada.length; lain++){
+            if(entrada[lain].startsWith('- ')){
+                opciones = opciones + 1;
+                envio = (envio + message.client.guilds.find("name", "Server secreto de Marco").emojis.find("name", emotinames[opciones]) + "\nopt" + entrada[lain].slice(1));
+                
+            } else {
+                envio = (envio + "\n" + entrada[lain]);
+            }
+        }
+        message.guild.channels.find("name", "chatprincipal").sendMessage(envio);
+    }
+});
+client.on('message', message => {
+    if (message.content.startsWith(prefix + 'emote')) {
+        message.react(message.client.guilds.find("name", "Server secreto de Marco").emojis.find("name", "Oland_flag"));
+    }
+});
+/*
+client.on('message', message => {
+    if (message.content.startsWith(prefix + 'fastpoll')) {
+        let entrada = message.content.split("\n");
+        let opciones = 0;
         let envio = ("** Hey! " + message.author.username + " ha iniciado una votación!**");
         for(lain = 1; lain < entrada.length; lain++){
             if(entrada[lain].startsWith('- ')){
@@ -49,16 +72,6 @@ client.on('message', message => {
         message.guild.channels.find("name", "chatprincipal").sendMessage(envio);
     }
 });
-client.on('message', message => {
-    if (message.content.startsWith(prefix + 'emote')) {
-        message.react(propomoji.find("name", "Oland_flag"));
-    }
-});
-/*
-    if (message.content.startsWith(prefix + 'emote')) {
-        message.react(message.client.guilds.find("name", "Server secreto de Marco").emojis.find("name", "Oland_flag"));
-        message.react(message.guild.emojis.find("name", "wut"));
-    }
 */
 // THIS  IS  THE  WAE
 client.login(process.env.BOT_TOKEN);
