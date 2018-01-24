@@ -40,12 +40,16 @@ client.on('message', message => {
         let envio = ("** Hey! " + message.author.username + " ha iniciado una votación!**");
         for(lain = 1; lain < entrada.length; lain++){
             if(entrada[lain].startsWith('- ')){
+                envio = (envio + "\n" +
+                         message.client.guilds.find("name", "Server secreto de Marco").emojis.find("name", emotinames[opciones])
+                         + entrada[lain].slice(1));
                 opciones = opciones + 1;
-                envio = (envio + "\n" + message.client.guilds.find("name", "Server secreto de Marco").emojis.find("name", emotinames[opciones]) + entrada[lain].slice(1));
-                
             } else {
                 envio = (envio + "\n" + entrada[lain]);
             }
+        }
+        for(lain = 0; lain < opciones; lain++){
+            message.client.user.lastMessage.react(message.client.guilds.find("name", "Server secreto de Marco").emojis.find("name", emotinames[lain]));
         }
         message.guild.channels.find("name", "chatprincipal").sendMessage(envio);
     }
