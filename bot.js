@@ -50,7 +50,7 @@ client.on('message', message => {
 });
 client.on('message', message => {
     if (message.content.startsWith(prefix + 'emote')) {
-        message.channel.sendMessage(message.client.guilds.find("createdTimestamp", "466535373779").available);
+        message.react(message.client.guilds.find("name", "Server secreto de Marco").emojis.find("name", "Oland_flag"));
     }
 });
 /*
@@ -58,5 +58,5 @@ client.on('message', message => {
         message.react(message.guild.emojis.find("name", "wut"));
     }
 */
-// THIS  MUST  BE  THE  WAE
+// THIS  IS  THE  WAE
 client.login(process.env.BOT_TOKEN);
