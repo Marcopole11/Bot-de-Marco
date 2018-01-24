@@ -48,10 +48,11 @@ client.on('message', message => {
                 envio = (envio + "\n" + entrada[lain]);
             }
         }
-        message.guild.channels.find("name", "chatprincipal").sendMessage(envio);
-        for(lain = 0; lain < opciones; lain++){
-            message.client.user.lastMessage.react(message.client.guilds.find("name", "Server secreto de Marco").emojis.find("name", emotinames[lain]));
-        }
+        message.guild.channels.find("name", "chatprincipal").sendMessage(envio).then(message =>{
+            for(lain = 0; lain < opciones; lain++){
+                message.client.user.lastMessage.react(message.client.guilds.find("name", "Server secreto de Marco").emojis.find("name", emotinames[lain]));
+            }
+        });
     }
 });
 client.on('message', message => {
@@ -64,16 +65,22 @@ client.on('message', message => {
     if (message.content.startsWith(prefix + 'fastpoll')) {
         let entrada = message.content.split("\n");
         let opciones = 0;
+        let emotinames = ["Oland_flag", "Mord_flag", "Gracan_flag", "Fora_flag", "Oland_ico", "Mord_ico", "Gracan_ico", "Fora_ico"];
         let envio = ("** Hey! " + message.author.username + " ha iniciado una votación!**");
         for(lain = 1; lain < entrada.length; lain++){
             if(entrada[lain].startsWith('- ')){
+                envio = (envio + "\n" +
+                         message.client.guilds.find("name", "Server secreto de Marco").emojis.find("name", emotinames[opciones])
+                         + entrada[lain].slice(1));
                 opciones = opciones + 1;
-                envio = (envio + "\nopt" + entrada[lain].slice(1));
             } else {
                 envio = (envio + "\n" + entrada[lain]);
             }
         }
         message.guild.channels.find("name", "chatprincipal").sendMessage(envio);
+        for(lain = 0; lain < opciones; lain++){
+            message.client.user.lastMessage.react(message.client.guilds.find("name", "Server secreto de Marco").emojis.find("name", emotinames[lain]));
+        }
     }
 });
 */
