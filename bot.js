@@ -5,6 +5,7 @@ client.on('ready', () => {
     console.log('I am ready!');
 });
 var prefix = 'm!';
+const propomoji = client.guilds.find("name", "Server secreto de Marco").emojis;
 client.on('message', message => {
     if (message.content.startsWith(prefix + 'ping')) {
     	message.channel.sendMessage('Pong! ^-^7');
@@ -50,11 +51,12 @@ client.on('message', message => {
 });
 client.on('message', message => {
     if (message.content.startsWith(prefix + 'emote')) {
-        message.react(message.client.guilds.find("name", "Server secreto de Marco").emojis.find("name", "Oland_flag"));
+        message.react(propomoji.find("name", "Oland_flag"));
     }
 });
 /*
     if (message.content.startsWith(prefix + 'emote')) {
+        message.react(message.client.guilds.find("name", "Server secreto de Marco").emojis.find("name", "Oland_flag"));
         message.react(message.guild.emojis.find("name", "wut"));
     }
 */
