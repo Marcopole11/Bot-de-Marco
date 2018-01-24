@@ -50,7 +50,7 @@ client.on('message', message => {
         }
         message.guild.channels.find("name", "chatprincipal").sendMessage(envio).then(message =>{
             for(lain = 0; lain < opciones; lain++){
-                message.client.user.lastMessage.react(message.client.guilds.find("name", "Server secreto de Marco").emojis.find("name", emotinames[lain]));
+                message.react(message.client.guilds.find("name", "Server secreto de Marco").emojis.find("name", emotinames[lain]));
             }
         });
     }
