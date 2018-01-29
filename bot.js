@@ -103,7 +103,7 @@ client.on('message', message => {
     }
 });
 client.on('message', message => {
-    if (message.author.username == "MuxyBot" && message.channel.name == dialogchat) {
+    if (message.author.username == "Skuld" && message.channel.name == dialogchat) {
         message.channel.sendMessage('detectado');
     }
 });
