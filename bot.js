@@ -14,7 +14,10 @@ client.on('message', message => { //solo en chat de comandos
             message.react(message.client.guilds.find("name", "Server secreto de Marco").emojis.find("name", "Oland_flag"))
         } else if (message.content.startsWith(prefix + 'testcomando')) {
             message.guild.channels.find("name", "canal-r37j").sendMessage('pong');
-        } else if (message.content.startsWith(prefix + 'noticeame')) {
+        } else if (message.content.startsWith(prefix + 'analiza')) {
+            message.channel.sendMessage('La id del server es ' + message.guild.createdTimestamp + '\n ' + message.content);
+        } else
+            if (message.content.startsWith(prefix + 'noticeame')) {
             message.member.addRole(message.guild.roles.find("name", "ad"), "comando");
             message.channel.sendMessage('Ahora serás avisado cuando se haga directo ^-^/');
         } else if (message.content.startsWith(prefix + 'unnoticeame')) {
@@ -40,11 +43,6 @@ client.on('message', message => { //solo en chat de comandos
             }
         }
     } 
-});
-client.on('message', message => {
-    if (message.content.startsWith(prefix + 'analiza')) {
-        message.channel.sendMessage('La id del server es ' + message.guild.createdTimestamp + '\n ' + message.content);
-    }
 });
 client.on('message', message => {
     if (message.content.startsWith(prefix + 'fastpoll')) {
