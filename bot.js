@@ -71,12 +71,12 @@ client.on('message', message => {
 });
 client.on('message', message => {
     if (message.content.startsWith(prefix + 'nuevodirecto') && message.channel.name == dialogchat) {
-        let entrada = message.content.split("ARTEIKA");
-        let salida = "prueba";
-        message.guild.channels.find("name", "aviso-directos").sendMessage(salida);
+        message.guild.channels.find("name", "aviso-directos").sendMessage('prueba');
     }
 }
 /*
+        let entrada = message.content.split("ARTEIKA");
+        let salida = "prueba";
 
 kap[("$(3)".charCodeAt(0)+ "").slice(-1)];)
 client.on('message', message => {
