@@ -79,7 +79,7 @@ client.on('message', message => {
         if(entrada.length < 4){
             message.channel.sendMessage('Me parece que aún te falta imaginación...');
         } else {
-            message.channel.sendMessage(kap[(entrada[3].charCodeAt(0)+ "").slice(-1)] + entrada.length);
+            message.channel.sendMessage(kap[(entrada[3].charCodeAt(0)+ "").slice(-1)]);
         }
     }
 });
