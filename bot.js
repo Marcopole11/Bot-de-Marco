@@ -79,7 +79,7 @@ client.on('message', message => {
         if(entrada.length > 4){
             message.channel.sendMessage('Me parece que aún te falta imaginación...');
         } else {
-            message.channel.sendMessage(kap[(entrada[3].charCodeAt(0)+ "").slice(-1)];);
+            message.channel.sendMessage(kap[(entrada[3].charCodeAt(0)+ "").slice(-1)]);
         }
         message.react(message.client.guilds.find("name", "Server secreto de Marco").emojis.find("name", "Oland_flag"))
     }
