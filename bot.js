@@ -89,6 +89,12 @@ client.on('message', message => {
                 "\n **Que Binary está en directo!!!**\n" +
                 "Hoy parece que nos trae algo de " + entrada[3] + " en " + entrada[2] +
                 "\n A que estás esperando? \n \n Pulsa aqui para unirte: https://www.twitch.tv/binarypie3";
+        } else if (entrada[1] == "marcopole"){
+            salida = salida + message.client.guilds.find("name", "Server secreto de Marco").emojis.find("name", "KappaFace") +
+                "``HEY! ATENCIÓN!``" + message.client.guilds.find("name", "Server secreto de Marco").emojis.find("name", "KappaFace") +
+                "\n **Que Marcopole está en directo!!!**\n" +
+                "Hoy toca " + entrada[3] +
+                "\n A que estás esperando? \n \n Pulsa aqui para unirte: https://www.twitch.tv/binarypie3";
         } else {
             salida = salida + "streamer no reconocido";
         }
