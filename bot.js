@@ -6,11 +6,13 @@ client.on('ready', () => {
 });
 var prefix = 'm!';
 var comandchat = "comandos";
-client.on('message', message => {
-    if (message.content.startsWith(prefix + 'ping') && message.channel.name == comandchat) {
-    	message.channel.sendMessage('Pong! ^-^7');
-    } else if (message.content.startsWith(prefix + 'emote')) {
-        message.react(message.client.guilds.find("name", "Server secreto de Marco").emojis.find("name", "Oland_flag"))
+client.on('message', message => { //solo en chat de comandos
+    if(message.content.startsWith(prefix) && message.channel.name == comandchat){
+        if (message.content.startsWith(prefix + 'ping')) {
+            message.channel.sendMessage('Pong! ^-^7');
+        } else if (message.content.startsWith(prefix + 'emote')) {
+            message.react(message.client.guilds.find("name", "Server secreto de Marco").emojis.find("name", "Oland_flag"))
+        }
     }
 });
 client.on('message', message => {
