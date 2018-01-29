@@ -93,8 +93,8 @@ client.on('message', message => {
             salida = salida + message.client.guilds.find("name", "Server secreto de Marco").emojis.find("name", "KappaFace") +
                 "``HEY! ATENCIÓN!``" + message.client.guilds.find("name", "Server secreto de Marco").emojis.find("name", "KappaFace") +
                 "\n **Que Marcopole está en directo!!!**\n" +
-                "Hoy toca " + entrada[3] +
-                "\n A que estás esperando? \n \n Pulsa aqui para unirte: https://www.twitch.tv/binarypie3";
+                "Hoy se encuentra " + entrada[3] +
+                "\n A que estás esperando? \n \n Pulsa aqui para unirte: https://www.twitch.tv/marcopole";
         } else {
             salida = salida + "streamer no reconocido";
         }
