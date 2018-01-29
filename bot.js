@@ -14,20 +14,32 @@ client.on('message', message => { //solo en chat de comandos
             message.react(message.client.guilds.find("name", "Server secreto de Marco").emojis.find("name", "Oland_flag"))
         } else if (message.content.startsWith(prefix + 'testcomando')) {
             message.guild.channels.find("name", "canal-r37j").sendMessage('pong');
+        } else if (message.content.startsWith(prefix + 'noticeame')) {
+            message.member.addRole(message.guild.roles.find("name", "ad"), "comando");
+            message.channel.sendMessage('Ahora serás avisado cuando se haga directo ^-^/');
+        } else if (message.content.startsWith(prefix + 'unnoticeame')) {
+            message.member.removeRole(message.guild.roles.find("name", "ad"), "comando");
+            message.channel.sendMessage('Perdona a Mitto-kun, a veces es un poco pesado u_u7');
+        } else if (message.content.startsWith(prefix + 'hentai')) {
+            const kap = [
+                'Que horror, ni pensarlo!',
+                'Buen material para un fanfic, cuéntame mas...',
+                'Si! Me encanta! Será mi nueva waifu! :D',
+                'Ni hablar! Antes me la corto y me hago monja. O_o',
+                'Sweet, I love it!',
+                'Eso amigo mio :o es un tesoro de los que se guardan por generaciones',
+                'Mejor no respondo',
+                'Meh, me esperaba algo mejor.',
+                'OMG eso es tan... TAN... MMMMMMMMHHHH...',
+                'Te estás ganando un porrazo...'];
+            let entrada = message.content.split(" ");
+            if(entrada.length < 4){
+                message.channel.sendMessage('Me parece que aún te falta imaginación...');
+            } else {
+                message.channel.sendMessage(kap[(entrada[3].charCodeAt(0)+ "").slice(-1)]);
+            }
         }
     } 
-});
-client.on('message', message => {
-    if (message.content.startsWith(prefix + 'noticeame')) {
-        message.member.addRole(message.guild.roles.find("name", "ad"), "comando");
-        message.channel.sendMessage('Ahora serás avisado cuando se haga directo ^-^/');
-    }
-});
-client.on('message', message => {
-    if (message.content.startsWith(prefix + 'unnoticeame')) {
-        message.member.removeRole(message.guild.roles.find("name", "ad"), "comando");
-        message.channel.sendMessage('Perdona a Mitto-kun, a veces es un poco pesado u_u7');
-    }
 });
 client.on('message', message => {
     if (message.content.startsWith(prefix + 'analiza')) {
@@ -57,27 +69,6 @@ client.on('message', message => {
         }).catch(function() {
           //Something
         });
-    }
-});
-client.on('message', message => {
-    if (message.content.startsWith(prefix + 'hentai')) {
-        const kap = [
-            'Que horror, ni pensarlo!',
-            'Buen material para un fanfic, cuéntame mas...',
-            'Si! Me encanta! Será mi nueva waifu! :D',
-            'Ni hablar! Antes me la corto y me hago monja. O_o',
-            'Sweet, I love it!',
-            'Eso amigo mio :o es un tesoro de los que se guardan por generaciones',
-            'Mejor no respondo',
-            'Meh, me esperaba algo mejor.',
-            'OMG eso es tan... TAN... MMMMMMMMHHHH...',
-            'Te estás ganando un porrazo...'];
-        let entrada = message.content.split(" ");
-        if(entrada.length < 4){
-            message.channel.sendMessage('Me parece que aún te falta imaginación...');
-        } else {
-            message.channel.sendMessage(kap[(entrada[3].charCodeAt(0)+ "").slice(-1)]);
-        }
     }
 });
 /*
