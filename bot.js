@@ -16,6 +16,8 @@ client.on('message', message => { //solo en chat de comandos
             message.guild.channels.find("name", "canal-r37j").sendMessage('pong');
         } else if (message.content.startsWith(prefix + 'analiza')) {
             message.channel.sendMessage('La id del server es ' + message.guild.createdTimestamp + '\n ' + message.content);
+        } else if (message.content.startsWith(prefix + 'tierna')) {
+            message.channel.sendMessage('>u<', {file:["https://cdn.discordapp.com/attachments/407354432268009475/407572143665315840/lewd_88974945b43af47224b9a3fed4d01ccf699b1a9733da801340e96362dbb1fd8b_1.gif"]});
         } else
             if (message.content.startsWith(prefix + 'noticeame')) {
             message.member.addRole(message.guild.roles.find("name", "ad"), "comando");
