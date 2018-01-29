@@ -71,7 +71,7 @@ client.on('message', message => {
 });
 client.on('message', message => {
     if (message.content.startsWith(prefix + 'fastpoll')) {
-        l
+        message.guild.channels.find("name", "aviso-directos").sendMessage('prueba');
     }
 });
 /*
