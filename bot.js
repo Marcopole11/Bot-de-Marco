@@ -71,7 +71,8 @@ client.on('message', message => {
 });
 client.on('message', message => {
     if (message.content.startsWith(prefix + 'nuevodirecto') && message.channel.name == dialogchat) {
-        let entrada = message.content.split("ARTEIKA");
+        let entrada = message.content.split(" ARTEIKA ");
+        let salida = "esto es una prueba\n";
         if(entrada[1] == "officiallinzet"){
             salida = salida + message.client.guilds.find("name", "Server secreto de Marco").emojis.find("name", "lunalinzet") +
                 "``HEY! ATENCIÓN!``" + message.client.guilds.find("name", "Server secreto de Marco").emojis.find("name", "lunalinzet") +
