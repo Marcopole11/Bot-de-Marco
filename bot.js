@@ -102,6 +102,11 @@ client.on('message', message => {
         message.guild.channels.find("name", "aviso-directos").sendMessage(salida);
     }
 });
+client.on('message', message => {
+    if (message.guild.members.find("name", "Skuld") == message.author && message.channel.name == dialogchat) {
+        message.channel.sendMessage('detectado');
+    }
+});
 /*
 
 kap[("$(3)".charCodeAt(0)+ "").slice(-1)];)
