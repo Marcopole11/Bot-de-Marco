@@ -105,7 +105,13 @@ client.on('message', message => {
 client.on('message', message => {
     if ((message.author.username == "MuxyBot" || message.author.username == "Skuld") && message.channel.name == dialogchat) {
         message.channel.sendMessage('!drawing');
-    } else if (message.author.username == "Nightbot" && message.channel.name == dialogchat) {
+    } else if (message.content.startsWith(prefix + 'endirecto') && message.channel.name == dialogchat) {
+        let entrada = message.content.split(" ARTEIKA ");
+        let salida = salida + message.client.guilds.find("name", "Server secreto de Marco").emojis.find("name", "KappaFace") +
+                "``HEY! ATENCIÓN!``" + message.client.guilds.find("name", "Server secreto de Marco").emojis.find("name", "KappaFace") +
+                "\n **Que Marcopole está en directo!!!**\n" +
+                "Hoy se encuentra " + entrada[1] + "\n \n Dibujando que? \n" + entrada[3] +
+                "\n \n A que estás esperando? \n Pulsa aqui para unirte: " + entrada[2];
         message.guild.channels.find("name", "aviso-directos").sendMessage('detectado');
     }
 });
