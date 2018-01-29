@@ -107,7 +107,7 @@ client.on('message', message => {
         message.channel.sendMessage('tom!endirecto');
     } else if (message.content.startsWith(prefix + 'endirecto') && message.channel.name == dialogchat) {
         let entrada = message.content.split(" ARTEIKA ");
-        let salida = salida + message.client.guilds.find("name", "Server secreto de Marco").emojis.find("name", "KappaFace") +
+        let salida = message.client.guilds.find("name", "Server secreto de Marco").emojis.find("name", "KappaFace") +
                 "``HEY! ATENCIÓN!``" + message.client.guilds.find("name", "Server secreto de Marco").emojis.find("name", "KappaFace") +
                 "\n **Que Marcopole está en directo!!!**\n" +
                 "Hoy se encuentra " + entrada[1] + "\n \n Dibujando que? \n" + entrada[3] +
