@@ -76,7 +76,13 @@ client.on('message', message => {
         if(entrada[1] == "officiallinzet"){
             salida = salida + message.client.guilds.find("name", "Server secreto de Marco").emojis.find("name", "lunalinzet") +
                 "``HEY! ATENCIÓN!``" + message.client.guilds.find("name", "Server secreto de Marco").emojis.find("name", "lunalinzet") +
-                "\n **Que Linzet está en directo!!!**";
+                "\n **Que Linzet está en directo!!!**\n";
+            if(entrada[2] == "Creative"){
+                salida = salida + "Hoy toca dibujar por las risas! Va a estar " + entrada[3];
+            } else {
+                salida = salida + "Hoy toca " + entrada[2] + "! \n" + entrada[3];
+            }
+            salida = salida + "\n A que estás esperando? \n \n Pulsa aqui para unirte: https://www.twitch.tv/officiallinzet";
         } else {
             salida = salida + "streamer no reconocido";
         }
