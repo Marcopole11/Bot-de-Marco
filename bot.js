@@ -69,10 +69,9 @@ client.on('message', message => {
         });
     }
 });
-var dialogchat = "canal-r37j";
 client.on('message', message => {
-    if (message.content.startsWith(prefix + 'nuevodirecto') && message.channel.name == dialogchat) {
-        
+    if (message.content.startsWith(prefix + 'nuevodirecto')) {
+        message.guild.channels.find("name", "aviso-directos").sendMessage('prueba');
     }
 }
 
