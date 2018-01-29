@@ -71,8 +71,7 @@ client.on('message', message => {
 });
 client.on('message', message => {
     if (message.content.startsWith(prefix + 'nuevodirecto') && message.channel.name == dialogchat) {
-        let entrada = message.content.split("ARTEIKA");
-        let salida = "esto es una prueba\n";
+        let entrada = message.content.split(" ARTEIKA ");
         if(entrada[1] == "officiallinzet"){
             salida = salida + message.client.guilds.find("name", "Server secreto de Marco").emojis.find("name", "lunalinzet") +
                 "``HEY! ATENCIÓN!``" + message.client.guilds.find("name", "Server secreto de Marco").emojis.find("name", "lunalinzet") +
@@ -103,13 +102,6 @@ client.on('message', message => {
     }
 });
 /*
-        let entrada = message.content.split("ARTEIKA");
-        let salida = "prueba";
-client.on('message', message => {
-    if (message.content.startsWith(prefix + 'nuevodirecto') && message.channel.name == dialogchat) {
-        message.guild.channels.find("name", "aviso-directos").sendMessage('prueba');
-    }
-}
 
 kap[("$(3)".charCodeAt(0)+ "").slice(-1)];)
 client.on('message', message => {
