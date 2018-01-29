@@ -82,22 +82,23 @@ client.on('message', message => {
             } else {
                 salida = salida + "Hoy toca " + entrada[2] + "! \n _" + entrada[3] + "_";
             }
-            salida = salida + "\n A que estás esperando? \n \n Pulsa aqui para unirte: https://www.twitch.tv/officiallinzet";
+            salida = salida + "\n A que estás esperando? \n \n Pulsa aqui para unirte: " + entrada[4];
         } else if (entrada[1] == "binarypie3"){
             salida = salida +
                 "``HEY! ATENCIÓN!``" +
                 "\n **Que Binary está en directo!!!**\n" +
                 "Hoy parece que nos trae algo de " + entrada[3] + " en " + entrada[2] +
-                "\n A que estás esperando? \n \n Pulsa aqui para unirte: https://www.twitch.tv/binarypie3";
+                "\n A que estás esperando? \n \n Pulsa aqui para unirte: " + entrada[4];
         } else if (entrada[1] == "marcopole"){
             salida = salida + message.client.guilds.find("name", "Server secreto de Marco").emojis.find("name", "KappaFace") +
                 "``HEY! ATENCIÓN!``" + message.client.guilds.find("name", "Server secreto de Marco").emojis.find("name", "KappaFace") +
                 "\n **Que Marcopole está en directo!!!**\n" +
                 "Hoy se encuentra " + entrada[3] +
-                "\n A que estás esperando? \n \n Pulsa aqui para unirte: https://www.twitch.tv/marcopole";
+                "\n A que estás esperando? \n \n Pulsa aqui para unirte: " + entrada[4];
         } else {
             salida = salida + "streamer no reconocido";
         }
+        salida = salida + "\n Avisando a todos los " + message.guild.roles.find("name", "ad") + " :laughing:";
         message.guild.channels.find("name", "aviso-directos").sendMessage(salida);
     }
 });
