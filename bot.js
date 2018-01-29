@@ -5,20 +5,17 @@ client.on('ready', () => {
     console.log('I am ready!');
 });
 var prefix = 'm!';
-var comandchat = "comandos";
+var comandchat = "comandos"; var dialogchat = "comandos";
 client.on('message', message => { //solo en chat de comandos
-    if(message.content.startsWith(prefix) && message.channel.name == comandchat){
+    if(message.content.startsWith(prefix) && (message.channel.name == comandchat || message.channel.name == dialogchat)){
         if (message.content.startsWith(prefix + 'ping')) {
             message.channel.sendMessage('Pong! ^-^7');
         } else if (message.content.startsWith(prefix + 'emote')) {
             message.react(message.client.guilds.find("name", "Server secreto de Marco").emojis.find("name", "Oland_flag"))
+        } else if (message.content.startsWith(prefix + 'testcomando')) {
+            message.guild.channels.find("name", "canal-r37j").sendMessage('pong');
         }
-    }
-});
-client.on('message', message => {
-    if (message.content.startsWith(prefix + 'testcomando')) {
-        message.guild.channels.find("name", "canal-r37j").sendMessage('pong');
-    }
+    } 
 });
 client.on('message', message => {
     if (message.content.startsWith(prefix + 'noticeame')) {
