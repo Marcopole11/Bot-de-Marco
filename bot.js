@@ -5,7 +5,7 @@ client.on('ready', () => {
     console.log('I am ready!');
 });
 var prefix = 'm!';
-var comandchat = "comandos"; var dialogchat = "comandos";
+var comandchat = "comandos"; var dialogchat = "canal-r37j";
 client.on('message', message => { //solo en chat de comandos
     if(message.content.startsWith(prefix) && (message.channel.name == comandchat || message.channel.name == dialogchat)){
         if (message.content.startsWith(prefix + 'ping')) {
