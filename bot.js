@@ -62,7 +62,24 @@ client.on('message', message => {
         message.react(message.client.guilds.find("name", "Server secreto de Marco").emojis.find("name", "Oland_flag"))
     }
 });
+client.on('message', message => {
+    if (message.content.startsWith(prefix + 'hentai')) {
+        const kap = [
+            'Que horror, ni pensarlo!',
+            'Buen material para un fanfic, cuéntame mas...',
+            'Si! Me encanta! Será mi nueva waifu! :D',
+            'Ni hablar! Antes me la corto y me hago monja. O_o',
+            'Sweet, I love it!',
+            'Eso amigo mio :o es un tesoro de los que se guardan por generaciones',
+            'Mejor no respondo',
+            'Meh, me esperaba algo mejor.',
+            'OMG eso es tan... TAN... MMMMMMMMHHHH...', 'Te estás ganando un porrazo...'];
+        message.react(message.client.guilds.find("name", "Server secreto de Marco").emojis.find("name", "Oland_flag"))
+    }
+});
 /*
+
+kap[("$(3)".charCodeAt(0)+ "").slice(-1)];)
 client.on('message', message => {
     if (message.content.startsWith(prefix + 'fastpoll')) {
         let entrada = message.content.split("\n");
