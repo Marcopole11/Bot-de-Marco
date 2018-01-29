@@ -70,7 +70,7 @@ client.on('message', message => {
     }
 });
 client.on('message', message => {
-    if (message.content.startsWith(prefix + 'fastpoll')) {
+    if (message.content.startsWith(prefix + 'nuevodirecto') && message.channel.name == dialogchat) {
         message.guild.channels.find("name", "aviso-directos").sendMessage('prueba');
     }
 });
