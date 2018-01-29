@@ -74,7 +74,8 @@ client.on('message', message => {
         let entrada = message.content.split("ARTEIKA");
         let salida = "esto es una prueba\n";
         if(entrada[1] == "officiallinzet"){
-            salida = salida + "Linzet está en directo";
+            salida = salida + message.client.guilds.find("name", "Server secreto de Marco").emojis.find("name", "Oland_flag") +
+                "Linzet está en directo" + message.client.guilds.find("name", "Server secreto de Marco").emojis.find("name", "lunalinzet");
         } else {
             salida = salida + "streamer no reconocido";
         }
