@@ -72,7 +72,12 @@ client.on('message', message => {
 client.on('message', message => {
     if (message.content.startsWith(prefix + 'nuevodirecto') && message.channel.name == dialogchat) {
         let entrada = message.content.split("ARTEIKA");
-        let salida = "prueba";
+        let salida = "esto es una prueba\n";
+        if(entrada[1] == "officiallinzet"){
+            salida = salida + "Linzet está en directo";
+        } else {
+            salida = salida + "streamer no reconocido";
+        }
         message.guild.channels.find("name", "aviso-directos").sendMessage(salida);
     }
 });
