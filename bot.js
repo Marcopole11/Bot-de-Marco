@@ -76,12 +76,11 @@ client.on('message', message => {
             'OMG eso es tan... TAN... MMMMMMMMHHHH...',
             'Te estás ganando un porrazo...'];
         let entrada = message.content.split(" ");
-        if(entrada.length > 4){
+        if(entrada.length < 4){
             message.channel.sendMessage('Me parece que aún te falta imaginación...');
         } else {
             message.channel.sendMessage(kap[(entrada[3].charCodeAt(0)+ "").slice(-1)] + entrada.length);
         }
-        message.react(message.client.guilds.find("name", "Server secreto de Marco").emojis.find("name", "Oland_flag"))
     }
 });
 /*
