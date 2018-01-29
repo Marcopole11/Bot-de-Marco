@@ -73,7 +73,14 @@ client.on('message', message => {
             'Eso amigo mio :o es un tesoro de los que se guardan por generaciones',
             'Mejor no respondo',
             'Meh, me esperaba algo mejor.',
-            'OMG eso es tan... TAN... MMMMMMMMHHHH...', 'Te estás ganando un porrazo...'];
+            'OMG eso es tan... TAN... MMMMMMMMHHHH...',
+            'Te estás ganando un porrazo...'];
+        let entrada = message.content.split(" ");
+        if(entrada.length > 3){
+            message.channel.sendMessage('mas de 3');
+        } else {
+            message.channel.sendMessage('menos de 3');
+        }
         message.react(message.client.guilds.find("name", "Server secreto de Marco").emojis.find("name", "Oland_flag"))
     }
 });
