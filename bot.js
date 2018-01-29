@@ -72,7 +72,7 @@ client.on('message', message => {
 client.on('message', message => {
     if (message.content.startsWith(prefix + 'nuevodirecto') && message.channel.name == dialogchat) {
         let entrada = message.content.split(" ARTEIKA ");
-        let salida = "esto es una prueba\n";
+        let salida = "\n";
         if(entrada[1] == "officiallinzet"){
             salida = salida + message.client.guilds.find("name", "Server secreto de Marco").emojis.find("name", "lunalinzet") +
                 "``HEY! ATENCIÓN!``" + message.client.guilds.find("name", "Server secreto de Marco").emojis.find("name", "lunalinzet") +
@@ -103,8 +103,10 @@ client.on('message', message => {
     }
 });
 client.on('message', message => {
-    if (message.author.username == "Skuld" && message.channel.name == dialogchat) {
-        message.channel.sendMessage('detectado');
+    if ((message.author.username == "MuxyBot" || message.author.username == "Skuld") && message.channel.name == dialogchat) {
+        message.guild.channels.find("name", "aviso-directos").sendMessage('!drawing');
+    } else if (message.author.username == "ױBot de Marco" && message.channel.name == dialogchat) {
+        message.guild.channels.find("name", "aviso-directos").sendMessage('detectado');
     }
 });
 /*
