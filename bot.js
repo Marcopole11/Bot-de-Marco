@@ -106,7 +106,7 @@ client.on('message', message => {
 });
 client.on('message', message => {
     if ((message.author.username == "MuxyBot" || message.author.username == "Skuld") && message.channel.name == dialogchat) {
-        if(message.content.startsWith('@everyone marcopole just went live!'){
+        if(message.content.includes('marcopole just went live'){
            message.channel.sendMessage('tom!endirecto');
         }
     } else if (message.content.startsWith(prefix + 'endirecto') && message.channel.name == dialogchat) {
