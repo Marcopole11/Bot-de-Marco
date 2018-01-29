@@ -83,6 +83,12 @@ client.on('message', message => {
                 salida = salida + "Hoy toca " + entrada[2] + "! \n _" + entrada[3] + "_";
             }
             salida = salida + "\n A que estás esperando? \n \n Pulsa aqui para unirte: https://www.twitch.tv/officiallinzet";
+        } else if (entrada[1] == "officiallinzet"){
+            salida = salida + message.client.guild.emojis.find("name", "wagame") +
+                "``HEY! ATENCIÓN!``" + message.client.guild.emojis.find("name", "wagame") +
+                "\n **Que Binary está en directo!!!**\n" +
+                "Hoy parece que nos trae algo de " + entrada[3] + " en " + entrada[2] +
+                "\n A que estás esperando? \n \n Pulsa aqui para unirte: https://www.twitch.tv/binarypie3";
         } else {
             salida = salida + "streamer no reconocido";
         }
