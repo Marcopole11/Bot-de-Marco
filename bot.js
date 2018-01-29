@@ -112,7 +112,7 @@ client.on('message', message => {
                 "\n **Que Marcopole está en directo!!!**\n" +
                 "Hoy se encuentra " + entrada[1] + "\n \n Dibujando que? \n" + entrada[3] +
                 "\n \n A que estás esperando? \n Pulsa aqui para unirte: " + entrada[2];
-        message.guild.channels.find("name", "aviso-directos").sendMessage('detectado');
+        message.guild.channels.find("name", "aviso-directos").sendMessage(salida);
     }
 });
 /*
