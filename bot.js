@@ -80,7 +80,7 @@ client.on('message', message => {
             if(entrada[2] == "Creative"){
                 salida = salida + "Hoy toca dibujar por las risas! Va a estar " + entrada[3];
             } else {
-                salida = salida + "Hoy toca " + entrada[2] + "! \n" + entrada[3];
+                salida = salida + "Hoy toca " + entrada[2] + "! \n _" + entrada[3] + "_";
             }
             salida = salida + "\n A que estás esperando? \n \n Pulsa aqui para unirte: https://www.twitch.tv/officiallinzet";
         } else {
