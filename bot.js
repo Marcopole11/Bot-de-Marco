@@ -6,7 +6,7 @@ client.on('ready', () => {
 });
 var prefix = 'm!';
 client.on('message', message => {
-    if (message.content.startsWith(prefix + 'ping')) {
+    if (message.content.startsWith(prefix + 'ping') && message.channel.name == "comandos") {
     	message.channel.sendMessage('Pong! ^-^7');
     } else if (message.content.startsWith(prefix + 'emote')) {
         message.react(message.client.guilds.find("name", "Server secreto de Marco").emojis.find("name", "Oland_flag"))
