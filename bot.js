@@ -83,7 +83,7 @@ client.on('message', message => {
                 salida = salida + "Hoy toca " + entrada[2] + "! \n _" + entrada[3] + "_";
             }
             salida = salida + "\n A que estás esperando? \n \n Pulsa aqui para unirte: https://www.twitch.tv/officiallinzet";
-        } else if (entrada[1] == "officiallinzet"){
+        } else if (entrada[1] == "binarypie3"){
             salida = salida + message.client.guild.emojis.find("name", "wagame") +
                 "``HEY! ATENCIÓN!``" + message.client.guild.emojis.find("name", "wagame") +
                 "\n **Que Binary está en directo!!!**\n" +
