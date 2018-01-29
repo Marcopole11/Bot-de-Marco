@@ -105,7 +105,7 @@ client.on('message', message => {
 client.on('message', message => {
     if ((message.author.username == "MuxyBot" || message.author.username == "Skuld") && message.channel.name == dialogchat) {
         message.channel.sendMessage('!drawing');
-    } else if (message.author.username == "ױBot de Marco" && message.channel.name == dialogchat) {
+    } else if (message.author.username == "Nightbot" && message.channel.name == dialogchat) {
         message.guild.channels.find("name", "aviso-directos").sendMessage('detectado');
     }
 });
