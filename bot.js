@@ -17,7 +17,7 @@ client.on('message', message => { //solo en chat de comandos
         } else if (message.content.startsWith(prefix + 'analiza')) {
             message.channel.sendMessage('La id del server es ' + message.guild.createdTimestamp + '\n ' + message.content);
         } else if (message.content.startsWith(prefix + 'tierna')) {
-            message.channel.sendMessage('>u<');
+            message.channel.sendMessage('>u<', {file: "http://i0.kym-cdn.com/photos/images/newsfeed/001/246/976/007.gif"});
         } else
             if (message.content.startsWith(prefix + 'noticeame')) {
             message.member.addRole(message.guild.roles.find("name", "ad"), "comando");
