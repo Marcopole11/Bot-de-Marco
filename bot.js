@@ -11,7 +11,7 @@ client.on('message', message => { //solo en chat de comandos
         if (message.content.startsWith(prefix + 'ping')) {
             message.channel.sendMessage('Pong! ^-^7');
         } else if (message.content.startsWith(prefix + 'emote')) {
-            message.react(message.client.guilds.find("name", "Server secreto de Marco").emojis.find("name", "Oland_flag"))
+            message.react(message.client.guilds.find("name", "Server secreto de Marco").emojis.find("name", "Oland_flag"));
         } else if (message.content.startsWith(prefix + 'testcomando')) {
             message.guild.channels.find("name", "canal-r37j").sendMessage('pong');
         } else if (message.content.startsWith(prefix + 'analiza')) {
