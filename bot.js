@@ -82,7 +82,8 @@ client.on('message', message => {
             if(entrada[2] == "Creative"){
                 salida = salida + "Hoy toca dibujar por las risas! Va a estar " + entrada[3];
             } else {
-                salida = salida + "Hoy toca " + entrada[2] + "! \n _" + entrada[3] + "_";
+                let weekday = ["domingo", "lunes", "martes", "miercoles", "jueves", "viernes","sabado", "domingo"];
+                salida = salida + "Como es " + weekday[new Date().getDay()] + " hoy toca " + entrada[2] + "! \n _" + entrada[3] + "_";
             }
             salida = salida + "\n A que estás esperando? \n \n Pulsa aqui para unirte: " + entrada[4];
         } else if (entrada[1] == "binarypie3"){
@@ -114,8 +115,8 @@ client.on('message', message => {
         let salida = message.client.guilds.find("name", "Server secreto de Marco").emojis.find("name", "KappaFace") +
                 "``HEY! ATENCIÓN!``" + message.client.guilds.find("name", "Server secreto de Marco").emojis.find("name", "KappaFace") +
                 "\n **Que Marcopole está en directo!!!**\n" +
-                "Hoy se encuentra " + entrada[1] + "\n \n Dibujando que? \n" + entrada[3] +
-                "\n \n A que estás esperando? \n Pulsa aqui para unirte: " + entrada[2];
+                entrada[3] +
+                "\n \n A que estás esperando? \n Pulsa aqui para unirte:  https://www.twitch.tv/marcopole";
         salida = salida + "\n \n Avisando a todos los " + message.guild.roles.find("name", "ad") + " :laughing:";
         message.guild.channels.find("name", "aviso-directos").sendMessage(salida);
     }
