@@ -1,7 +1,7 @@
 {
   "name": "marcoBot",
   "description": "KING",
-  "version": "0.0.01",
+  "version": "0.0.04",
   "main": "bot.js",
   "scripts": {
     "start": "node bot.js"
