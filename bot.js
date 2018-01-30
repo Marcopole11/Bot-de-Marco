@@ -121,11 +121,11 @@ client.on('message', message => {
         message.guild.channels.find("name", "aviso-directos").sendMessage(salida);
     }
 });
-
-/*
 client.on("guildMemberAdd", (member) => {
-    member.
+    member.addRole(member.guild.roles.find("name", "ad"), "comando");
 });
+/*
+
 kap[("$(3)".charCodeAt(0)+ "").slice(-1)];)
 client.on('message', message => {
     if (message.content.startsWith(prefix + 'fastpoll')) {
