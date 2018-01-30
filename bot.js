@@ -88,8 +88,8 @@ client.on('message', message => {
             }
             salida = salida + "\n A que estás esperando? \n \n Pulsa aqui para unirte: " + entrada[4];
         } else if (entrada[1] == "binarypie3"){
-            salida = salida +
-                "``HEY! ATENCIÓN!``" +
+            salida = salida + message.guild.emojis.find("name", "wagame") +
+                "``HEY! ATENCIÓN!``" + message.guild.emojis.find("name", "wagame") +
                 "\n **Que Binary está en directo!!!**\n" +
                 "Hoy parece que nos trae algo de " + entrada[3] + " en " + entrada[2] +
                 "\n A que estás esperando? \n \n Pulsa aqui para unirte: " + entrada[4];
