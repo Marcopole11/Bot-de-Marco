@@ -63,7 +63,7 @@ client.on('message', message => {
                 envio = (envio + "\n" + entrada[lain]);
             }
         }
-        envio = ("Fastoll indefinido " + opciones " RekTeaQuerry\n" + envio);
+        envio = ("Fastoll indefinido " + opciones + " RekTeaQuerry\n" + envio);
         message.guild.channels.find("name", "chatprincipal").sendMessage(envio);
     }
 });
