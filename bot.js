@@ -65,6 +65,8 @@ client.on('message', message => {
         }
         envio = ("Fastoll indefinido " + opciones + " RekTeaQuerry\n" + envio);
         message.guild.channels.find("name", "chatprincipal").sendMessage(envio);
+    } else if (message.author.username == message.client.user.username){
+        message.channel.sendMessage('Detectado');
     }
 });
 client.on('message', message => {
