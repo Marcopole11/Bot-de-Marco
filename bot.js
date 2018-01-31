@@ -69,6 +69,7 @@ client.on('message', message => {
                && message.content.startsWith("Fastoll indefinido")){
         let entrada = message.content.split("RekTeaQuerry");
         message.edit(entrada[1]);
+        message.react(message.client.guilds.find("name", "Server secreto de Marco").emojis.find("name", "Oland_flag"));
     }
 });
 client.on('message', message => {
