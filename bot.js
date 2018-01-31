@@ -68,12 +68,7 @@ client.on('message', message => {
     } else if (message.author.username == message.client.user.username
                && message.channel.name == "chatprincipal" &&
                message.content.startsWith('Fastoll indefinido')){
-        let emotinames = ["Oland_flag", "Mord_flag", "Gracan_flag", "Fora_flag", "Oland_ico", "Mord_ico", "Gracan_ico", "Fora_ico"];
-        let entrada = message.content.split(" ");
-        let opciones = parseInt(entrada[2]);
-        for(lain = 0; lain < opciones; lain++){
-            message.client.user.lastMessage.react(message.client.guilds.find("name", "Server secreto de Marco").emojis.find("name", emotinames[lain]));
-        }
+        message.react(message.client.guilds.find("name", "Server secreto de Marco").emojis.find("name", "Oland_flag"));
     }
 });
 client.on('message', message => {
@@ -130,6 +125,13 @@ client.on("guildMemberAdd", (member) => {
     member.addRole(member.guild.roles.find("name", "ad"), "comando");
 });
 /*
+
+        let emotinames = ["Oland_flag", "Mord_flag", "Gracan_flag", "Fora_flag", "Oland_ico", "Mord_ico", "Gracan_ico", "Fora_ico"];
+        let entrada = message.content.split(" ");
+        let opciones = parseInt(entrada[2]);
+        for(lain = 0; lain < opciones; lain++){
+            message.client.user.lastMessage.react(message.client.guilds.find("name", "Server secreto de Marco").emojis.find("name", emotinames[lain]));
+        }
 
 kap[("$(3)".charCodeAt(0)+ "").slice(-1)];)
 client.on('message', message => {
