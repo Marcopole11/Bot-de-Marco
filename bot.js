@@ -63,10 +63,8 @@ client.on('message', message => {
                 envio = (envio + "\n" + entrada[lain]);
             }
         }
+        envio = ("Fastoll indefinido " + opciones " RekTeaQuerry\n" + envio);
         message.guild.channels.find("name", "chatprincipal").sendMessage(envio);
-        for(lain = 0; lain < opciones; lain++){
-            message.client.user.lastMessage.react(message.client.guilds.find("name", "Server secreto de Marco").emojis.find("name", emotinames[lain]));
-        }
     }
 });
 client.on('message', message => {
