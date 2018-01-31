@@ -65,7 +65,15 @@ client.on('message', message => {
         }
         envio = ("Fastoll indefinido " + opciones + " RekTeaQuerry\n" + envio);
         message.guild.channels.find("name", "chatprincipal").sendMessage(envio);
-    } else if (message.author.username == message.client.user.username){
+    } else if (message.author.username == message.client.user.username
+               && message.channel.name == "chatprincipal" &&
+               message.content.startsWith('Fastoll indefinido')){
+        let emotinames = ["Oland_flag", "Mord_flag", "Gracan_flag", "Fora_flag", "Oland_ico", "Mord_ico", "Gracan_ico", "Fora_ico"];
+        let entrada = message.content.split(" ");
+        let opciones = parseInt(entrada[2]);
+        for(lain = 0; lain < opciones; lain++){
+            message.client.user.lastMessage.react(message.client.guilds.find("name", "Server secreto de Marco").emojis.find("name", emotinames[lain]));
+        }
     }
 });
 client.on('message', message => {
