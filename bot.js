@@ -67,7 +67,7 @@ client.on('message', message => {
         message.guild.channels.find("name", "chatprincipal").sendMessage(envio);
     } else if (message.author.username == message.client.user.username
                && message.content.startsWith("Fastoll indefinido")){
-        message.react(message.client.guilds.find("name", "Server secreto de Marco").emojis.find("name", "Oland_flag"));
+        message.channel.sendMessage('detectado');
     }
 });
 client.on('message', message => {
