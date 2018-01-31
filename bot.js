@@ -63,11 +63,12 @@ client.on('message', message => {
                 envio = (envio + "\n" + entrada[lain]);
             }
         }
-        envio = ("Fastoll indefinido " + opciones + " RekTeaQuerry\n" + envio);
+        envio = ("Fastoll indefinido " + opciones + "RekTeaQuerry\n" + envio);
         message.guild.channels.find("name", "chatprincipal").sendMessage(envio);
     } else if (message.author.username == message.client.user.username
                && message.content.startsWith("Fastoll indefinido")){
-        message.edit('Función aún no disponible :sweat:');
+        let entrada = message.content.split("RekTeaQuerry");
+        message.edit(entrada[1]);
     }
 });
 client.on('message', message => {
