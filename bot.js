@@ -15,6 +15,8 @@ client.on('message', message => { //solo en chat de comandos
             message.react(message.guild.emojis.find("name", "wagame"));
         } else if (message.content.startsWith(prefix + 'testcomando')) {
             message.guild.channels.find("name", "canal-r37j").sendMessage('pong');
+        } else if (message.content.startsWith(prefix + 'btestcomando')) {
+            message.client.guilds.find("name", "Server secreto de Marco").channels.find("name", "canal-r37j").sendMessage('pong');
         } else if (message.content.startsWith(prefix + 'analiza')) {
             message.channel.sendMessage('La id del server es ' + message.guild.createdTimestamp + '\n ' + message.content);
         } else if (message.content.startsWith(prefix + 'tierna')) {
