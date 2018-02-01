@@ -24,10 +24,11 @@ client.on('message', message => { //solo en chat de comandos
         } else
             if (message.content.startsWith(prefix + 'noticeame')) {
             message.member.addRole(message.guild.roles.find("name", "ad"), "comando");
-            message.channel.sendMessage('Ahora serás avisado cuando se haga directo ^-^/');
+            message.channel.sendMessage('Vale, te avisaré cuando se haga directo ^-^/');
         } else if (message.content.startsWith(prefix + 'unnoticeame')) {
             message.member.removeRole(message.guild.roles.find("name", "ad"), "comando");
-            message.channel.sendMessage('Perdona a Mitto-kun, a veces es un poco pesado u_u7');
+            message.channel.sendMessage('Entiendo... perdoname si fuí muy pesada' +
+                message.client.guilds.find("name", "Server secreto de Marco").emojis.find("name", "botsad"));
         } else if (message.content.startsWith(prefix + 'hentai')) {
             const kap = [
                 'Que horror, ni pensarlo!',
