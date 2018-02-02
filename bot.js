@@ -29,6 +29,8 @@ client.on('message', message => { //solo en chat de comandos
             message.member.removeRole(message.guild.roles.find("name", "ad"), "comando");
             message.channel.sendMessage('Entiendo... perdoname si fuí muy pesada' +
                 message.client.guilds.find("name", "Server secreto de Marco").emojis.find("name", "botsad"));
+        } else if (message.content.startsWith(prefix + 'comandos') || message.content.startsWith(prefix + 'commands')) {
+            message.channel.sendMessage('Para que preguntas eso? \nMis comandos están en los mensajes anclados de este canal.');
         } else if (message.content.startsWith(prefix + 'hentai')) {
             const kap = [
                 'Que horror, ni pensarlo!',
