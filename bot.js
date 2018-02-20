@@ -53,7 +53,7 @@ client.on('message', message => { //solo en chat de comandos
                 message.channel.sendMessage('Despues de "m!hentai" introduce el nombre de la persona y seguido el fetiche que evaluar\nPor ejemplo: ``m!hentai @Marcopole sin camiseta``');
             } else if(entrada.length < 4){
                 message.channel.sendMessage('Me parece que aún te falta imaginación...');
-            } else if(entrada[3] == "pene" || entrada[3] == "penis" || entrada[3] == "polla"){
+            } else if(entrada[3] == "pene" || entrada[3] == "penis" || entrada[3] == "polla" || entrada[3] == "pito" || entrada[3] == "pirula"){
                 if(entrada[2] == "mi" || entrada[2] == "un" || entrada[2] == "el"){
                     message.channel.sendMessage('Creo que no lo has escrito bién');
                 } else if(entrada[2] == "gran"){
