@@ -148,9 +148,9 @@ client.on("guildMemberAdd", (member) => {
     member.addRole(member.guild.roles.find("name", "newbye"), "Por seguridad");
     member.addRole(member.guild.roles.find("name", "ad"), "Recien llegado");
     if(member.username.includes("a")){
-        guild.channels.find("name", "recibimiento").sendMessage("tiene a");
+        //guild.channels.find("name", "recibimiento").sendMessage("tiene a");
     } else {
-        guild.channels.find("name", "recibimientos").sendMessage("no tiene a");
+        //guild.channels.find("name", "recibimientos").sendMessage("no tiene a");
     }
 });
 /*
