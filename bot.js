@@ -48,7 +48,10 @@ client.on('message', message => { //solo en chat de comandos
                 'OMG eso es tan... TAN... MMMMMMMMHHHH...',
                 'Te estás ganando un porrazo...'];
             let entrada = message.content.split(" ");
-            if(entrada.length < 4){
+            if(entrada.length < 4 || entrada[3].charCodeAt(0)+"" == "@"){
+                message.channel.sendMessage('Me parece que introduciste mal el comando');
+                message.channel.sendMessage('Despues de "m!hentai" introduce el nombre de la persona y seguido el fetiche que evaluar\nPor ejemplo: ``m!hentai @Marcopole sin camiseta``');
+            } else if(entrada.length < 3){
                 message.channel.sendMessage('Me parece que aún te falta imaginación...');
             } else {
                 message.channel.sendMessage(kap[(entrada[3].charCodeAt(0)+ "").slice(-1)]);
@@ -192,6 +195,26 @@ client.on('message', message => {
         });
     }
 });
+
+
+Hentai original
+else if (message.content.startsWith(prefix + 'hentai')) {
+            const kap = [
+                'Que horror, ni pensarlo!',
+                'Buen material para un fanfic, cuéntame mas...',
+                'Si! Me encanta! Será mi nueva waifu! :D',
+                'Ni hablar! Antes me la corto y me hago monja. O_o',
+                'Sweet, I love it!',
+                'Eso amigo mio :o es un tesoro de los que se guardan por generaciones',
+                'Mejor no respondo',
+                'Meh, me esperaba algo mejor.',
+                'OMG eso es tan... TAN... MMMMMMMMHHHH...',
+                'Te estás ganando un porrazo...'];
+            let entrada = message.content.split(" ");
+            if(entrada.length < 4){
+                message.channel.sendMessage('Me parece que aún te falta imaginación...');
+            }
+
 */
 // THIS  IS  THE  WAE
 client.login(process.env.BOT_TOKEN);
