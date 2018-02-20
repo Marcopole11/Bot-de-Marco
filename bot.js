@@ -49,7 +49,7 @@ client.on('message', message => { //solo en chat de comandos
                 'Te estás ganando un porrazo...'];
             let entrada = message.content.split(" ");
             if(entrada.length < 4 || entrada[3].charCodeAt(0)+"" == "@"){
-                message.channel.sendMessage('Me parece que introduciste mal el comando');
+                message.channel.sendMessage('Me parece que introduciste mal el comando' + message.client.guilds.find("name", "Server secreto de Marco").emojis.find("name", "BotLoLamenta"));
                 message.channel.sendMessage('Despues de "m!hentai" introduce el nombre de la persona y seguido el fetiche que evaluar\nPor ejemplo: ``m!hentai @Marcopole sin camiseta``');
             } else if(entrada.length < 3){
                 message.channel.sendMessage('Me parece que aún te falta imaginación...');
