@@ -147,7 +147,6 @@ client.on('message', message => {
 client.on("guildMemberAdd", (member) => {
     member.addRole(member.guild.roles.find("name", "newbye"), "Por seguridad");
     member.addRole(member.guild.roles.find("name", "ad"), "Recien llegado");
-    member.client.guilds.find("name", "Inseguro discord de Marcopole").guild.channels.find("name", "recibimiento").sendMessage("nuevo miembro");
 });
 /*
 if(member.username.includes("a")){
