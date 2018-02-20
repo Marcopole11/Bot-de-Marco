@@ -145,8 +145,8 @@ client.on('message', message => {
     }
 });
 client.on("guildMemberAdd", (member) => {
-    member.addRole(member.guild.roles.find("name", "ad"), "Recien llegado");
     member.addRole(member.guild.roles.find("name", "newbye"), "Por seguridad");
+    member.addRole(member.guild.roles.find("name", "ad"), "Recien llegado");
 });
 /*
 
