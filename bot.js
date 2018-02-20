@@ -147,14 +147,15 @@ client.on('message', message => {
 client.on("guildMemberAdd", (member) => {
     member.addRole(member.guild.roles.find("name", "newbye"), "Por seguridad");
     member.addRole(member.guild.roles.find("name", "ad"), "Recien llegado");
-    if(member.username.includes("a")){
-        //guild.channels.find("name", "recibimiento").sendMessage("tiene a");
-    } else {
-        //guild.channels.find("name", "recibimientos").sendMessage("no tiene a");
-    }
+    
 });
 /*
-
+if(member.username.includes("a")){
+        guild.channels.find("name", "recibimiento").sendMessage("tiene a");
+    } else {
+        guild.channels.find("name", "recibimientos").sendMessage("no tiene a");
+    }
+    
         let emotinames = ["Oland_flag", "Mord_flag", "Gracan_flag", "Fora_flag", "Oland_ico", "Mord_ico", "Gracan_ico", "Fora_ico"];
         let entrada = message.content.split(" ");
         let opciones = parseInt(entrada[2]);
