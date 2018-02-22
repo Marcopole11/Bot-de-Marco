@@ -162,7 +162,7 @@ client.on("guildMemberAdd", (member) => {
 });
 client.on('message', (omsg, nmsg) =>  {
     let rprt = "**``Mensaje editado ``**``" + nmsg.author.username + " a las " + nmsg.author.editedAt  + "``\n" + nmsg.content;
-    omsg.guild.channels.find("name", "aviso-directos").sendMessage(rprt);
+    omsg.guild.channels.find("name", "log").sendMessage(rprt);
 });
 /*
 
