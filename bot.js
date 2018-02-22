@@ -161,7 +161,7 @@ client.on("guildMemberAdd", (member) => {
     member.addRole(member.guild.roles.find("name", "ad"), "Recien llegado");
 });
 client.on('messageUpdate', (omsg, nmsg) =>  {
-    let rprt = "_Mensaje editado_ por " + nmsg.author.username + " en " + nmsg.channel + " a las " + nmsg.editedAt  + "``\n**``" + nmsg.content + "``**";
+    let rprt = "_Mensaje editado_ por " + nmsg.author.username + " en " + nmsg.channel + " \n**_``" + omsg.content + "``_**"+ "\n**``" + nmsg.content + "``**";
     omsg.guild.channels.find("name", "log").sendMessage(rprt);
 });
 /*
