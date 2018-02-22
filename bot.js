@@ -165,7 +165,7 @@ client.on('messageUpdate', (omsg, nmsg) =>  {
     if(nmsg.author.username == "Howl"){
         let entrada = nmsg.content.split(" ");
         if(entrada[1] == ":gun:" && entrada[2] == ":skull:¡Has muerto!:skull:,"){
-            omsg.guild.channels.find("name", "log").sendMessage("Le pongo que murió");
+            omsg.guild.channels.find("name", "log").sendMessage("Le pongo que murió " + entrada[0]);
         } else if(entrada[0] == "Felicitaciones," && entrada[2] == "pescaste:"){
             omsg.guild.channels.find("name", "log").sendMessage("ha pescado");
         } else if (Math.random() < 0.11) {
