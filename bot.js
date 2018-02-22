@@ -170,8 +170,9 @@ client.on('messageUpdate', (omsg, nmsg) =>  {
             omsg.guild.channels.find("name", "log").sendMessage("ha pescado");
         } else if (Math.random() < 0.11) {
             omsg.guild.channels.find("name", "log").sendMessage("Howl sempai!!!");
+        } else {
+            omsg.guild.channels.find("name", "log").sendMessage(rprt);
         }
-        
     } else {
         omsg.guild.channels.find("name", "log").sendMessage(rprt);
     }
