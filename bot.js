@@ -160,6 +160,10 @@ client.on("guildMemberAdd", (member) => {
     member.addRole(member.guild.roles.find("name", "newbye"), "Por seguridad");
     member.addRole(member.guild.roles.find("name", "ad"), "Recien llegado");
 });
+client.on('message', (omsg, nmsg) =>  {
+    let rprt = "**``Mensaje editado ``**``" + nmsg.author.username + " a las " + nmsg.author.editedAt  + "``\n" + nmsg.content;
+    omsg.guild.channels.find("name", "aviso-directos").sendMessage(rprt);
+});
 /*
 
 if (command === 'spec'){
