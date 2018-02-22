@@ -162,7 +162,11 @@ client.on("guildMemberAdd", (member) => {
 });
 client.on('messageUpdate', (omsg, nmsg) =>  {
     let rprt = "__Mensaje editado__ por _" + nmsg.author.username + "_ en " + nmsg.channel + " \n**``" + omsg.content + "``**\n\n**``" + nmsg.content + "``**";
-    omsg.guild.channels.find("name", "log").sendMessage(rprt);
+    if(nmsg.author.username == "ױHowl"){
+        omsg.guild.channels.find("name", "log").sendMessage("Howl sempai!!!");
+    } else {
+        omsg.guild.channels.find("name", "log").sendMessage(rprt);
+    }
 });
 client.on("messageDelete", message => {
     let rprt = "__Mensaje eliminado__ de _" + message.author.username + "_ en " + message.channel + " \n**``" + message.content + "``**";
