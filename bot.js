@@ -92,7 +92,7 @@ client.on('message', message => {
         let entrada = message.content.split("RekTeaQuerry");
         message.edit(entrada[1]);
         message.react(message.client.guilds.find("name", "Server secreto de Marco").emojis.find("name", "Oland_flag"));
-    } else 
+    } 
 });
 client.on('message', message => {
     if (message.content.startsWith(prefix + 'nuevodirecto') && message.channel.name == dialogchat) {
