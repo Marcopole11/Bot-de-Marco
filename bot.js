@@ -93,6 +93,8 @@ client.on('message', message => {
         message.edit(entrada[1]);
         message.react(message.client.guilds.find("name", "Server secreto de Marco").emojis.find("name", "Oland_flag"));
     } else if (message.content == 'spec'){
+        message.channel.sendMessage("See or Change?");
+        const collector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { time: 10000 });
         message.channel.sendMessage('Soy fuerte!');
     }
 });
