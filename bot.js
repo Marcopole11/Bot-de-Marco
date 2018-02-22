@@ -93,11 +93,6 @@ client.on('message', message => {
             }
         })
         message.guild.channels.find("name", "chatprincipal").sendMessage(envio);
-    } else if (message.author.username == message.client.user.username
-               && message.content.startsWith("Fastoll indefinido")){
-        let entrada = message.content.split("RekTeaQuerry");
-        message.edit(entrada[1]);
-        message.react(message.client.guilds.find("name", "Server secreto de Marco").emojis.find("name", "Oland_flag"));
     } else if (message.content == 'spec'){
         message.channel.sendMessage("See or Change?");
         const collector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { time: 10000 });
