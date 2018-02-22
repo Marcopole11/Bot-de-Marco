@@ -161,7 +161,11 @@ client.on("guildMemberAdd", (member) => {
     member.addRole(member.guild.roles.find("name", "ad"), "Recien llegado");
 });
 client.on('messageUpdate', (omsg, nmsg) =>  {
-    let rprt = "_Mensaje editado_ por " + nmsg.author.username + " en " + nmsg.channel + " \n**``" + omsg.content + "``**"+ "\n\n**``" + nmsg.content + "``**";
+    let rprt = "_Mensaje editado_ por " + nmsg.author.username + " en " + nmsg.channel + " \n**``" + omsg.content + "``**\n\n**``" + nmsg.content + "``**";
+    omsg.guild.channels.find("name", "log").sendMessage(rprt);
+});
+client.on("messageDelete", message => {
+    let rprt = "_Mensaje eliminado_ de " + message.author.username + " en " + message.channel + " \n**``" + message.content + "``**";
     omsg.guild.channels.find("name", "log").sendMessage(rprt);
 });
 /*
