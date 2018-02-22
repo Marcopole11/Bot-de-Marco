@@ -92,6 +92,17 @@ client.on('message', message => {
         let entrada = message.content.split("RekTeaQuerry");
         message.edit(entrada[1]);
         message.react(message.client.guilds.find("name", "Server secreto de Marco").emojis.find("name", "Oland_flag"));
+    } else if (command === 'spec'){
+        message.author.send("See or Change?");
+        const collector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { time: 10000 });
+        console.log(collector)
+        collector.on('collect', message => {
+            if (message.content == "See") {
+                message.channel.send("You Want To See Someones Spec OK!");
+            } else if (message.content == "Change") {
+                message.channel.send("You Want To Change Your Spec OK!");
+            }
+        }
     }
 });
 client.on('message', message => {
