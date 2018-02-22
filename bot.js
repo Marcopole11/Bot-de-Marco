@@ -90,7 +90,9 @@ client.on('message', message => {
         collector.on('collect', message => {
             message.react(message.client.guilds.find("name", "Server secreto de Marco").emojis.find("name", "Oland_flag"));
         })
-        message.guild.channels.find("name", "chatprincipal").sendMessage(envio);
+        setTimeout(function(){
+            message.guild.channels.find("name", "chatprincipal").sendMessage(envio);
+        }, 3000);
     } else if (message.content == 'spec'){
         message.channel.sendMessage("See or Change?");
         const collector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { time: 10000 });
