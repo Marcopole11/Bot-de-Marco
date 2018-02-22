@@ -162,7 +162,7 @@ client.on("guildMemberAdd", (member) => {
 });
 client.on('messageUpdate', (omsg, nmsg) =>  {
     let rprt = "__Mensaje editado__ por _" + nmsg.author.username + "_ en " + nmsg.channel + " \n**``" + omsg.content + "``**\n\n**``" + nmsg.content + "``**";
-    if(nmsg.author.username == "ױHowl"){
+    if(nmsg.author.username == "Howl"){
         omsg.guild.channels.find("name", "log").sendMessage("Howl sempai!!!");
     } else {
         omsg.guild.channels.find("name", "log").sendMessage(rprt);
