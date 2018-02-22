@@ -88,9 +88,7 @@ client.on('message', message => {
         //envio = ("Fastoll indefinido " + opciones + "RekTeaQuerry\n" + envio);
         const collector = new Discord.MessageCollector(message.guild.channels.find("name", "chatprincipal"), pl => pl.author.username === message.client.user.username, { time: 10000 });
         collector.on('collect', message => {
-            if (message.content.startsWith("Nueva votación?")) {
-                message.react(message.client.guilds.find("name", "Server secreto de Marco").emojis.find("name", "Oland_flag"));
-            }
+            message.react(message.client.guilds.find("name", "Server secreto de Marco").emojis.find("name", "Oland_flag"));
         })
         message.guild.channels.find("name", "chatprincipal").sendMessage(envio);
     } else if (message.content == 'spec'){
