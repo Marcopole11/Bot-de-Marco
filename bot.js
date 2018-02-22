@@ -85,7 +85,7 @@ client.on('message', message => {
                 envio = (envio + "\n" + entrada[lain]);
             }
         }
-        envio = ("Fastoll indefinido " + opciones + "RekTeaQuerry\n" + envio);
+        //envio = ("Fastoll indefinido " + opciones + "RekTeaQuerry\n" + envio);
         const collector = new Discord.MessageCollector(message.guild.channels.find("name", "chatprincipal"), pl => pl.author.username === message.client.user.username, { time: 10000 });
         collector.on('collect', message => {
             if (message.content.startsWith("Nueva votación?")) {
