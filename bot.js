@@ -163,8 +163,10 @@ client.on("guildMemberAdd", (member) => {
 client.on('messageUpdate', (omsg, nmsg) =>  {
     let rprt = "__Mensaje editado__ por _" + nmsg.author.username + "_ en " + nmsg.channel + " \n**``" + omsg.content + "``**\n\n**``" + nmsg.content + "``**";
     if(nmsg.author.username == "Howl"){
-        if(false){
-        } else if (Math.random() < 0.5) {
+        let entrada = nmsg.content.split(" ");
+        if(entrada[1] == ":gun:" && entrada[2] ":skull:¡Has muerto!:skull:,"){
+            omsg.guild.channels.find("name", "log").sendMessage("Le pongo que murió");
+        } else if (Math.random() < 0.11) {
             omsg.guild.channels.find("name", "log").sendMessage("Howl sempai!!!");
         }
         
