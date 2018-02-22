@@ -166,7 +166,7 @@ client.on('messageUpdate', (omsg, nmsg) =>  {
 });
 client.on("messageDelete", message => {
     let rprt = "_Mensaje eliminado_ de " + message.author.username + " en " + message.channel + " \n**``" + message.content + "``**";
-    omsg.guild.channels.find("name", "log").sendMessage(rprt);
+    message.guild.channels.find("name", "log").sendMessage(rprt);
 });
 /*
 
