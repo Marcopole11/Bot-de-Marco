@@ -164,7 +164,7 @@ client.on('messageUpdate', (omsg, nmsg) =>  {
     let rprt = "__Mensaje editado__ por _" + nmsg.author.username + "_ en " + nmsg.channel + " \n**``" + omsg.content + "``**\n\n**``" + nmsg.content + "``**";
     if(nmsg.author.username == "Howl"){
         let entrada = nmsg.content.split(" ");
-        if(entrada[1] == ":gun:" && entrada[2] == ":skull:¡Has muerto!:skull:,"){
+        if(entrada[2] == ":skull:¡Has muerto!:skull:,"){
             omsg.guild.channels.find("name", "log").sendMessage("Le pongo que murió " + entrada[0]);
         } else if(entrada[0] == "Felicitaciones," && entrada[2] == "pescaste:"){
             omsg.guild.channels.find("name", "log").sendMessage("ha pescado");
@@ -172,6 +172,7 @@ client.on('messageUpdate', (omsg, nmsg) =>  {
             omsg.guild.channels.find("name", "log").sendMessage("Howl sempai!!!");
         } else {
             omsg.guild.channels.find("name", "log").sendMessage(rprt);
+            omsg.guild.channels.find("name", "log").sendMessage("``" + entrada[2] + "``");
         }
     } else {
         omsg.guild.channels.find("name", "log").sendMessage(rprt);
