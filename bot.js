@@ -18,7 +18,7 @@ client.on('message', message => { //solo en chat de comandos
         } else if (message.content.startsWith(prefix + 'btestcomando')) {
             message.client.guilds.find("name", "Server secreto de Marco").channels.find("name", "general").sendMessage('pong');
         } else if (message.content.startsWith(prefix + 'analiza')) {
-            message.channel.sendMessage('La id del server es ' + message.guild.createdTimestamp + '\n ' + message.content);
+            message.channel.sendMessage('Tu id es ' + message.author.id);
         } else if (message.content.startsWith(prefix + 'tierna')) {
             message.channel.sendMessage('>u<', {file: "http://i0.kym-cdn.com/photos/images/newsfeed/001/246/976/007.gif"});
         } else
