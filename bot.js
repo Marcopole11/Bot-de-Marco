@@ -165,14 +165,11 @@ client.on('messageUpdate', (omsg, nmsg) =>  {
     if(nmsg.author.username == "Howl"){
         let entrada = nmsg.content.split(" ");
         if(entrada[1] == ":gun:" && entrada[2] == ":skull:¡Has" && entrada[3] == "muerto!:skull:,"){
-            omsg.guild.channels.find("name", "log").sendMessage("Le pongo que murió " + entrada[0]);
-        } else if(entrada[0] == "Felicitaciones," && entrada[2] == "pescaste:"){
+            omsg.guild.channels.find("name", "log").sendMessage(entrada[0].joinedTimestamp);
+        } /*else if(entrada[0] == "Felicitaciones," && entrada[2] == "pescaste:"){
             omsg.guild.channels.find("name", "log").sendMessage("ha pescado");
-        } else if (Math.random() < 0.11) {
+        }*/ else if (Math.random() < 0.11) {
             omsg.guild.channels.find("name", "log").sendMessage("Howl sempai!!!");
-        } else {
-            omsg.guild.channels.find("name", "log").sendMessage(rprt);
-            omsg.guild.channels.find("name", "log").sendMessage("``" + entrada[2] + "``");
         }
     } else {
         omsg.guild.channels.find("name", "log").sendMessage(rprt);
