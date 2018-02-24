@@ -165,8 +165,9 @@ client.on('messageUpdate', (omsg, nmsg) =>  {
     if(nmsg.author.username == "Howl"){
         let entrada = nmsg.content.split(" ");
         if(entrada[1] == ":gun:" && entrada[2] == ":skull:¡Has" && entrada[3] == "muerto!:skull:,"){
-              //omsg.guild.channels.find("name", "log").sendMessage(entrada[0].joinedTimestamp);
-             omsg.guild.channels.find("name", "log").sendMessage(omsg.guild.members.get(entrada[0].slice(2, -1)));
+              //omsg.guild.channels.find("name", "log").sendMessage(entrada[0].joinedTimestamp);omsg.
+              //guild.channels.find("name", "log").sendMessage(omsg.guild.members.get(entrada[0].slice(2, -1)));
+             omsg.guild.channels.find("name", "log").sendMessage(entrada[0].slice(2, -1));
         } /*else if(entrada[0] == "Felicitaciones," && entrada[2] == "pescaste:"){
             omsg.guild.channels.find("name", "log").sendMessage("ha pescado");
         }*/ else if (Math.random() < 0.11) {
