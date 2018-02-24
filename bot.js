@@ -90,9 +90,9 @@ client.on('message', message => {
             }
         }
         message.channel.send(envio).then(m => {
-            /*for(opt = 0; opt < opciones; opt++{
-                m.react(m.client.guilds.find("name", "Server secreto de Marco").emojis.find("name", emotinames[lain]));
-            }*/
+            for(opt = 0; opt < opciones; opt++{
+                //m.react(m.client.guilds.find("name", "Server secreto de Marco").emojis.find("name", emotinames[lain]));
+            }
         });
     }
 });
