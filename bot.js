@@ -78,7 +78,7 @@ client.on('message', message => {
         let entrada = message.content.split("\n");
         let opciones = 0;
         let emotinames = ["Oland_flag", "Mord_flag", "Gracan_flag", "Fora_flag", "Oland_ico", "Mord_ico", "Gracan_ico", "Fora_ico"];
-        let envio = ("Nueva votación? ** Hey! " + message.author.username + " ha iniciado una votación!**");
+        let envio = ("**Hey! " + message.author.username + " ha iniciado una votación!**");
         for(lain = 1; lain < entrada.length; lain++){
             if(entrada[lain].startsWith('- ')){
                 envio = (envio + "\n" +
@@ -89,25 +89,11 @@ client.on('message', message => {
                 envio = (envio + "\n" + entrada[lain]);
             }
         }
-        //envio = ("Fastoll indefinido " + opciones + "RekTeaQuerry\n" + envio);
-        const collector = new Discord.MessageCollector(message.guild.channels.find("name", "chatprincipal"), pl => pl.author.username === message.client.user.username, { time: 10000 });
-        collector.on('collect', message => {
-            message.react(message.client.guilds.find("name", "Server secreto de Marco").emojis.find("name", "Oland_flag"));
-        })
-        setTimeout(function(){
-            message.guild.channels.find("name", "chatprincipal").sendMessage(envio);
-        }, 3000);
-    } else if (message.content == 'spec'){
-        message.channel.sendMessage("See or Change?");
-        const collector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { time: 10000 });
-        collector.on('collect', message => {
-            if (message.content == "See") {
-                message.channel.send("You Want To See Someones Spec OK!");
-            } else if (message.content == "Change") {
-                message.channel.send("You Want To Change Your Spec OK!");
-            }
-        })
-        message.channel.sendMessage('Soy fuerte!');
+        message.channel.send("hola").then(m => {
+                for(opt = 0; opt < opciones; opt++{
+                    m.react(m.client.guilds.find("name", "Server secreto de Marco").emojis.find("name", emotinames[lain]));
+                }
+            });
     }
 });
 client.on('message', message => {
@@ -260,6 +246,43 @@ client.on('message', message => {
         }).catch(function() {
           //Something
         });
+    }
+});
+client.on('message', message => {
+    if (message.content.startsWith(prefix + 'fastpoll')) {
+        let entrada = message.content.split("\n");
+        let opciones = 0;
+        let emotinames = ["Oland_flag", "Mord_flag", "Gracan_flag", "Fora_flag", "Oland_ico", "Mord_ico", "Gracan_ico", "Fora_ico"];
+        let envio = ("Nueva votación? ** Hey! " + message.author.username + " ha iniciado una votación!**");
+        for(lain = 1; lain < entrada.length; lain++){
+            if(entrada[lain].startsWith('- ')){
+                envio = (envio + "\n" +
+                         message.client.guilds.find("name", "Server secreto de Marco").emojis.find("name", emotinames[opciones])
+                         + entrada[lain].slice(1));
+                opciones = opciones + 1;
+            } else {
+                envio = (envio + "\n" + entrada[lain]);
+            }
+        }
+        //envio = ("Fastoll indefinido " + opciones + "RekTeaQuerry\n" + envio);
+        const collector = new Discord.MessageCollector(message.guild.channels.find("name", "chatprincipal"), pl => pl.author.username === message.client.user.username, { time: 10000 });
+        collector.on('collect', message => {
+            message.react(message.client.guilds.find("name", "Server secreto de Marco").emojis.find("name", "Oland_flag"));
+        })
+        setTimeout(function(){
+            message.guild.channels.find("name", "chatprincipal").sendMessage(envio);
+        }, 3000);
+    } else if (message.content == 'spec'){
+        message.channel.sendMessage("See or Change?");
+        const collector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { time: 10000 });
+        collector.on('collect', message => {
+            if (message.content == "See") {
+                message.channel.send("You Want To See Someones Spec OK!");
+            } else if (message.content == "Change") {
+                message.channel.send("You Want To Change Your Spec OK!");
+            }
+        })
+        message.channel.sendMessage('Soy fuerte!');
     }
 });
 client.on('message', message => {
