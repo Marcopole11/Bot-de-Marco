@@ -66,8 +66,8 @@ client.on('message', message => { //solo en chat de comandos
                 let correcto = 0;
                 for(i = 0; i < entrada[3].length; i++){
                     if(resguardo == entrada[3].charCodeAt(i) || (
-                        (entrada[3].charCodeAt(i) < 91 && entrada[3].charCodeAt(i) > 65) ||
-                        (entrada[3].charCodeAt(i) < 122 && entrada[3].charCodeAt(i) > 97) ||
+                        (entrada[3].charCodeAt(i) < 91 && entrada[3].charCodeAt(i) > 64) ||
+                        (entrada[3].charCodeAt(i) < 123 && entrada[3].charCodeAt(i) > 96) ||
                         (entrada[3].charCodeAt(i) == 225 || entrada[3].charCodeAt(i) == 233 || entrada[3].charCodeAt(i) == 237 ||
                         entrada[3].charCodeAt(i) == 243 || entrada[3].charCodeAt(i) == 250 || entrada[3].charCodeAt(i) == 252))){
                     } else {
