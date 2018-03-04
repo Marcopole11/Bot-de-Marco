@@ -77,7 +77,9 @@ client.on('message', message => { //solo en chat de comandos
                 }
                 if(correcto > 0){
                     message.channel.sendMessage('No puedo entender tu mensaje >n<\nSe encontraron '+ correcto + ' errores.');
-                } else if(entrada[3] == "pene" || entrada[3] == "penis" || entrada[3] == "polla" || entrada[3] == "pito" || entrada[3] == "pirula"){
+                } else if(entrada[3] == "pene" || entrada[3] == "penis" || entrada[3] == "polla" || entrada[3] == "pito" || entrada[3] == "pirula" ||
+                         entrada[3] == "péne" || entrada[3] == "pénis" || entrada[3] == "pólla" || entrada[3] == "pené" || entrada[3] == "penes" ||
+                         entrada[3] == "péné" || entrada[3] == "penés" || entrada[3] == "pollá"){
                     if(entrada[2] == "mi" || entrada[2] == "un" || entrada[2] == "el"){
                         message.channel.sendMessage('Creo que no lo has escrito bién');
                     } else if(entrada[2] == "gran"){
