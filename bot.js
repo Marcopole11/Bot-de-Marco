@@ -20,7 +20,7 @@ client.on('message', message => { //solo en chat de comandos
         } else if (message.content.startsWith(prefix + 'testcomando')) {
             message.guild.channels.find("name", "canal-r37j").sendMessage('pong');
         } else if (message.content.startsWith(prefix + 'testcontar')) {
-            //message.channel.fetchMessages({ limit: 10 }).array().join("\n")
+            let cuacosa = message.channel.fetchMessages({ limit: 10 }).array().join("\n");
             message.channel.send("hola");
         } else if (message.content.startsWith(prefix + 'btestcomando')) {
             message.client.guilds.find("name", "Server secreto de Marco").channels.find("name", "general").sendMessage('pong');
