@@ -65,7 +65,7 @@ client.on('message', message => { //solo en chat de comandos
                 let resguardo = 0;
                 let correcto = 0;
                 for(i = 0; i < entrada[3].length; i++){
-                    if(resguardo != entrada[3].charCodeAt(i) || (
+                    if(resguardo != entrada[3].charCodeAt(i) && (
                         (entrada[3].charCodeAt(i) < 91 && entrada[3].charCodeAt(i) > 64) ||
                         (entrada[3].charCodeAt(i) < 123 && entrada[3].charCodeAt(i) > 96) ||
                         (entrada[3].charCodeAt(i) == 225 || entrada[3].charCodeAt(i) == 233 || entrada[3].charCodeAt(i) == 237 ||
