@@ -55,23 +55,40 @@ client.on('message', message => { //solo en chat de comandos
                 'OMG eso es tan... TAN... MMMMMMMMHHHH...',
                 'Te estás ganando un porrazo...'];
             let entrada = message.content.split(" ");
+            
             if(entrada.length < 3 || entrada[3].charCodeAt(0)+"" == "@"){
                 message.channel.sendMessage('Me parece que introduciste mal el comando...');
                 message.channel.sendMessage('Despues de "m!hentai" introduce el nombre de la persona y seguido el fetiche que evaluar\nPor ejemplo: ``m!hentai @Marcopole sin camiseta``');
-            } else if(entrada.length < 4){
-                message.channel.sendMessage('Me parece que aún te falta imaginación...');
-            } else if(entrada[3] == "pene" || entrada[3] == "penis" || entrada[3] == "polla" || entrada[3] == "pito" || entrada[3] == "pirula"){
-                if(entrada[2] == "mi" || entrada[2] == "un" || entrada[2] == "el"){
-                    message.channel.sendMessage('Creo que no lo has escrito bién');
-                } else if(entrada[2] == "gran"){
-                    message.channel.sendMessage('Ancha mejor, coso ser largo mucho!');
-                } else if(entrada.length < 5){
-                    message.channel.sendMessage('Eso ha sido poco creativo');
-                } else {
-                    message.channel.sendMessage(kap[(entrada[4].charCodeAt(0)+ "").slice(-1)]);
+            } else{
+                let resguardo = 0;
+                let correcto = 0;
+                for(i = 0; i < entrada[3].length; i++){ 65 - 90 97 - 122 225 233 237 243 250
+                    if(resguardo == entrada[3].charCodeAt(i) || (
+                        (entrada[3].charCodeAt(i) < 91 && entrada[3].charCodeAt(i) > 65) ||
+                        (entrada[3].charCodeAt(i) < 122 && entrada[3].charCodeAt(i) > 97) ||
+                        (entrada[3].charCodeAt(i) == 225 || entrada[3].charCodeAt(i) == 233 || entrada[3].charCodeAt(i) == 237 ||
+                        entrada[3].charCodeAt(i) == 243 || entrada[3].charCodeAt(i) == 250 || entrada[3].charCodeAt(i) == 252) ){
+                    } else {
+                       let correcto = correcto + 1;
+                    }
                 }
-            } else {
-                message.channel.sendMessage(kap[(entrada[3].charCodeAt(0)+ "").slice(-1)]);
+                if(correcto > 0){
+                    message.channel.sendMessage('No puedo entender tu mensaje >n<\nSe encontraron '+ correcto + ' errores.');
+                } else if(entrada.length < 4){
+                    message.channel.sendMessage('Me parece que aún te falta imaginación...');
+                } else if(entrada[3] == "pene" || entrada[3] == "penis" || entrada[3] == "polla" || entrada[3] == "pito" || entrada[3] == "pirula"){
+                    if(entrada[2] == "mi" || entrada[2] == "un" || entrada[2] == "el"){
+                        message.channel.sendMessage('Creo que no lo has escrito bién');
+                    } else if(entrada[2] == "gran"){
+                        message.channel.sendMessage('Ancha mejor, coso ser largo mucho!');
+                    } else if(entrada.length < 5){
+                        message.channel.sendMessage('Eso ha sido poco creativo');
+                    } else {
+                        message.channel.sendMessage(kap[(entrada[4].charCodeAt(0)+ "").slice(-1)]);
+                    }
+                } else {
+                    message.channel.sendMessage(kap[(entrada[3].charCodeAt(0)+ "").slice(-1)]);
+                }
             }
         }
     } 
