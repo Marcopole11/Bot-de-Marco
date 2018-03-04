@@ -64,7 +64,7 @@ client.on('message', message => { //solo en chat de comandos
             } else {
                 let resguardo = 0;
                 let correcto = 0;
-                /*for(i = 0; i < entrada[3].length; i++){
+                for(i = 0; i < entrada[3].length; i++){
                     if(resguardo == entrada[3].charCodeAt(i) || (
                         (entrada[3].charCodeAt(i) < 91 && entrada[3].charCodeAt(i) > 65) ||
                         (entrada[3].charCodeAt(i) < 122 && entrada[3].charCodeAt(i) > 97) ||
@@ -73,7 +73,7 @@ client.on('message', message => { //solo en chat de comandos
                     } else {
                        let correcto = correcto + 1;
                     }
-                }*/
+                }
                 if(correcto > 0){
                     message.channel.sendMessage('No puedo entender tu mensaje >n<\nSe encontraron '+ correcto + ' errores.');
                 } else if(entrada[3] == "pene" || entrada[3] == "penis" || entrada[3] == "polla" || entrada[3] == "pito" || entrada[3] == "pirula"){
