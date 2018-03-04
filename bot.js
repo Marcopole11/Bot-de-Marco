@@ -71,7 +71,7 @@ client.on('message', message => { //solo en chat de comandos
                         (entrada[3].charCodeAt(i) == 225 || entrada[3].charCodeAt(i) == 233 || entrada[3].charCodeAt(i) == 237 ||
                         entrada[3].charCodeAt(i) == 243 || entrada[3].charCodeAt(i) == 250 || entrada[3].charCodeAt(i) == 252))){
                     } else {
-                       let correcto = correcto + 1;
+                       correcto = correcto + 1;
                     }
                 }
                 if(correcto > 0){
