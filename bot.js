@@ -35,8 +35,12 @@ client.on('message', message => { //solo en chat de comandos
             message.channel.fetchMessage('420154833480450048').then(message => {
                 message.edit('patatua');
             });
-        } else if (message.content.startsWith(prefix + 'btestcomando')) {
+        } else if (message.content.startsWith(prefix + 'testbcomando')) {
             message.client.guilds.find("name", "Server secreto de Marco").channels.find("name", "general").sendMessage('pong');
+        } else if (message.content.startsWith(prefix + 'testaviso')) {
+            message.guild.channels.find("name", "chat-principal").sendMessage('Ya he aprendido a usar el arco, flecha de amor para todos! \:hearts:');
+            message.guild.channels.find("name", "chat-principal").sendMessage('...');
+            message.guild.channels.find("name", "chat-principal").sendMessage('Porque nadie se mueve \:cold_sweat:');
         } else if (message.content.startsWith(prefix + 'analiza')) {
             message.channel.sendMessage('Tu id es ' + message.author.id);
         } else if (message.content.startsWith(prefix + 'tierna')) {
