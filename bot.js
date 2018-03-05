@@ -107,6 +107,11 @@ client.on('message', message => { //solo en chat de comandos
                 }
             }
         }
+    } else {
+        if(message.member.roles.find("name", "Undead")){
+            message.member.addRole(message.guild.roles.find("name", "Alive!"), "comando");
+            message.member.removeRole(message.guild.roles.find("name", "Undead"), "comando");
+        }
     }
 });
 client.on('message', message => {
