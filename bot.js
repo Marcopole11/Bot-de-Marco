@@ -22,6 +22,9 @@ client.on('message', message => { //solo en chat de comandos
         } else if (message.content.startsWith(prefix + 'testcontar')) {
             message.channel.fetchMessages({ limit: 10 }).then(messages => {
                 messages.forEach(m=> {
+                    if(m.content.startsWith("Pong!")){
+                        m.channel.send(m.id);
+                    }
                 })
              });
             message.channel.send("hola");
