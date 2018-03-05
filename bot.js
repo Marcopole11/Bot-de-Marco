@@ -107,7 +107,7 @@ client.on('message', message => { //solo en chat de comandos
                 }
             }
         }
-    }} 
+    }
 });
 client.on('message', message => {
     if (message.content.startsWith(prefix + 'fastpoll')) {
