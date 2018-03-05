@@ -8,9 +8,11 @@ var prefix = 'm!';
 var comandchat = "comandos"; var dialogchat = "canal-r37j";
 client.on('message', message => { //solo en chat de comandos
     if(message.content.startsWith(prefix) && (message.channel.name == comandchat || message.channel.name == dialogchat)){
-    if(message.author.id == '192007091169263616'){
         if (message.content.startsWith(prefix + 'ping')) {
             message.channel.sendMessage('Pong! ^-^7');
+        } else if (message.content.startsWith(prefix + 'test') && message.author.id != '192007091169263616') {
+            message.channel.send("Marcopole no me deja que uses ese comando" +
+                message.client.guilds.find("name", "Server secreto de Marco").emojis.find("name", "botsad"));
         } else if (message.content.startsWith(prefix + 'emote')) {
             //message.react(message.client.guilds.find("name", "Server secreto de Marco").emojis.find("name", "Oland_flag"));
             //message.react(message.guild.emojis.find("name", "wagame"));
@@ -30,7 +32,7 @@ client.on('message', message => { //solo en chat de comandos
              });
             message.channel.send("hola");
         } else if (message.content.startsWith(prefix + 'testeditar')) {
-            message.channel.fetchMessage('420149749858041857').then(message => {
+            message.channel.fetchMessage('420154833480450048').then(message => {
                 message.edit('patatua');
             });
         } else if (message.content.startsWith(prefix + 'btestcomando')) {
