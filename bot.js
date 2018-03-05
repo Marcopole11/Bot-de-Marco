@@ -28,6 +28,10 @@ client.on('message', message => { //solo en chat de comandos
                 })
              });
             message.channel.send("hola");
+        } else if (message.content.startsWith(prefix + 'testeditar')) {
+            message.channel.fetchMessage('420149749858041857').then(message => {
+                message.edit('patatua');
+            });
         } else if (message.content.startsWith(prefix + 'btestcomando')) {
             message.client.guilds.find("name", "Server secreto de Marco").channels.find("name", "general").sendMessage('pong');
         } else if (message.content.startsWith(prefix + 'analiza')) {
