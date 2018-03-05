@@ -8,6 +8,7 @@ var prefix = 'm!';
 var comandchat = "comandos"; var dialogchat = "canal-r37j";
 client.on('message', message => { //solo en chat de comandos
     if(message.content.startsWith(prefix) && (message.channel.name == comandchat || message.channel.name == dialogchat)){
+    if(message.author.id == '192007091169263616'){
         if (message.content.startsWith(prefix + 'ping')) {
             message.channel.sendMessage('Pong! ^-^7');
         } else if (message.content.startsWith(prefix + 'emote')) {
@@ -104,7 +105,7 @@ client.on('message', message => { //solo en chat de comandos
                 }
             }
         }
-    } 
+    }} 
 });
 client.on('message', message => {
     if (message.content.startsWith(prefix + 'fastpoll')) {
