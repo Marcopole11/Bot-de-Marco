@@ -66,7 +66,7 @@ client.on('message', message => { //solo en chat de comandos
             message.channel.sendMessage('Para que preguntas eso? \nMis comandos están en los mensajes anclados de este canal.');
         } else if (message.content.startsWith(prefix + 'help') || message.content.startsWith(prefix + 'info')) {
             message.channel.sendMessage('Yo? pues... aún no tengo nombre...');
-            message.channel.sendMessage('Soy un Bot creado por ᴍᴀʀᴄᴏᴩᴏʟᴇ mediante javascript y Discord.js\nAhora mismo estoy en la versión 0.0.12, puedes ver mi proceso en '
+            message.channel.sendMessage('Soy un Bot creado por ᴍᴀʀᴄᴏᴩᴏʟᴇ mediante javascript y Discord.js\nAhora mismo estoy en la versión 0.0.13, puedes ver mi proceso en '
                 + message.guild.channels.find("name", "proceso-del-bot") + "\n _Marcopole, actualizame! >:c_");
         } else if (message.content.startsWith(prefix + 'hentai')) {
             const kap = [
@@ -125,7 +125,7 @@ client.on('message', message => { //solo en chat de comandos
             let emotinames = ["Oland_flag", "Mord_flag", "Gracan_flag", "Fora_flag", "Oland_ico", "Mord_ico", "Gracan_ico", "Fora_ico"];
             let envio = ("**Hey! " + message.author.username + " ha iniciado una votación!**");
             for(lain = 1; lain < entrada.length; lain++){
-                if(entrada[lain].startsWith('- ')){
+                if(entrada[lain].startsWith('- ') && opciones < 8){
                     envio = (envio + "\n" +
                              message.client.guilds.find("name", "Server secreto de Marco").emojis.find("name", emotinames[opciones])
                              + entrada[lain].slice(1));
