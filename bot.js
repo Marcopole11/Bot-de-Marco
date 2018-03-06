@@ -151,6 +151,7 @@ client.on('message', message => {
 });
 client.on('message', message => {
     if (message.content.startsWith(prefix + 'nuevodirecto') && message.channel.name == dialogchat) {
+        message.guild.roles.find("name", "ad").edit({mentionable: true});
         let entrada = message.content.split(" ARTEIKA ");
         let salida = "\n";
         if(entrada[1] == "officiallinzet"){
@@ -181,6 +182,7 @@ client.on('message', message => {
             salida = salida + "streamer no reconocido";
         }
         message.guild.channels.find("name", "aviso⠐directos").sendMessage(salida);
+        message.guild.roles.find("name", "ad").edit({mentionable: false});
     }
 });
 client.on('message', message => {
