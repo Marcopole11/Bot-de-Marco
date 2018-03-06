@@ -134,7 +134,7 @@ client.on('message', message => { //solo en chat de comandos
                     envio = (envio + "\n" + entrada[lain]);
                 }
             }
-            message.guild.channels.find("name", "canal-r37j").send(envio).then(m => {
+            message.guild.channels.find("name", "chat-principal").send(envio).then(m => {
             //message.channel.send(envio).then(m => {
                 for(let opt = 0; opt < opciones; opt++){
                     m.react(m.client.guilds.find("name", "Server secreto de Marco").emojis.find("name", emotinames[opt]));
