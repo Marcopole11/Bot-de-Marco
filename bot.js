@@ -238,7 +238,7 @@ client.on("messageDelete", message => {
 client.on('voiceStateUpdate', (oldMember, newMember) => {
     let newUserChannel = newMember.voiceChannel;
     let oldUserChannel = oldMember.voiceChannel;
-    if(oldUserChannel === 'undefined' && newUserChannel !== 'undefined') {
+    if(oldUserChannel === undefined && newUserChannel !== undefined) {
         newMember.guild.channels.find("name", "log").sendMessage("entró");
     } else if(newUserChannel === undefined){
         newMember.guild.channels.find("name", "log").sendMessage("se fué");
