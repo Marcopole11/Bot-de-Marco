@@ -119,6 +119,26 @@ client.on('message', message => { //solo en chat de comandos
                     message.channel.sendMessage(kap[(entrada[3].charCodeAt(0)+ "").slice(-1)]);
                 }
             }
+        } else if (message.content.startsWith(prefix + 'fastpoll')) {
+            let entrada = message.content.split("\n");
+            let opciones = 0;
+            let emotinames = ["Oland_flag", "Mord_flag", "Gracan_flag", "Fora_flag", "Oland_ico", "Mord_ico", "Gracan_ico", "Fora_ico"];
+            let envio = ("**Hey! " + message.author.username + " ha iniciado una votación!**");
+            for(lain = 1; lain < entrada.length; lain++){
+                if(entrada[lain].startsWith('- ')){
+                    envio = (envio + "\n" +
+                             message.client.guilds.find("name", "Server secreto de Marco").emojis.find("name", emotinames[opciones])
+                             + entrada[lain].slice(1));
+                    opciones = opciones + 1;
+                } else {
+                    envio = (envio + "\n" + entrada[lain]);
+                }
+            }
+            message.guild.channels.find("name", "chat-principal").send(envio).then(m => {
+                for(let opt = 0; opt < opciones; opt++){
+                    m.react(m.client.guilds.find("name", "Server secreto de Marco").emojis.find("name", emotinames[opt]));
+                }
+            });
         }
     } else {
         if(message.member.roles.find("name", "Undead")){
@@ -131,30 +151,6 @@ client.on('message', message => { //solo en chat de comandos
             
             }
         }
-    }
-});
-client.on('message', message => {
-    if (message.content.startsWith(prefix + 'fastpoll')) {
-        let entrada = message.content.split("\n");
-        let opciones = 0;
-        let emotinames = ["Oland_flag", "Mord_flag", "Gracan_flag", "Fora_flag", "Oland_ico", "Mord_ico", "Gracan_ico", "Fora_ico"];
-        let envio = ("**Hey! " + message.author.username + " ha iniciado una votación!**");
-        for(lain = 1; lain < entrada.length; lain++){
-            if(entrada[lain].startsWith('- ')){
-                envio = (envio + "\n" +
-                         message.client.guilds.find("name", "Server secreto de Marco").emojis.find("name", emotinames[opciones])
-                         + entrada[lain].slice(1));
-                opciones = opciones + 1;
-            } else {
-                envio = (envio + "\n" + entrada[lain]);
-            }
-        }
-        
-        message.channel.send(envio).then(m => {
-            for(let opt = 0; opt < opciones; opt++){
-                m.react(m.client.guilds.find("name", "Server secreto de Marco").emojis.find("name", emotinames[opt]));
-            }
-        });
     }
 });
 client.on('message', message => {
