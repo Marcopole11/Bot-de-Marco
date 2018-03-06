@@ -189,7 +189,7 @@ client.on('message', message => {
             message.channel.sendMessage('tom!endirecto');
         }
     } else if (message.content.startsWith(prefix + 'endirecto') && message.channel.name == dialogchat) {
-        //message.guild.roles.find("name", "ad").edit({mentionable: true});
+        message.guild.roles.find("name", "ad").edit({mentionable: true});
         let entrada = message.content.split(" ARTEIKA ");
         let salida = message.client.guilds.find("name", "Server secreto de Marco").emojis.find("name", "KappaFace") +
                 "``HEY! ATENCIÓN!``" + message.client.guilds.find("name", "Server secreto de Marco").emojis.find("name", "KappaFace") +
@@ -197,8 +197,8 @@ client.on('message', message => {
                 entrada[3] +
                 "\n \n A que estás esperando? \n Pulsa aqui para unirte:  https://www.twitch.tv/marcopole";
         salida = salida + "\n \n Avisando a todos los " + message.guild.roles.find("name", "ad") + " :laughing:";
-        message.guild.channels.find("name", "aviso-directos").sendMessage(salida);
-        //message.guild.roles.find("name", "ad").edit({mentionable: false});
+        message.guild.channels.find("name", "aviso⠐directos").sendMessage(salida);
+        message.guild.roles.find("name", "ad").edit({mentionable: false});
     }
 });
 client.on("guildMemberAdd", (member) => {
