@@ -34,8 +34,12 @@ client.on('message', message => { //solo en chat de comandos
              });
             message.channel.send("hola");
         } else if (message.content.startsWith(prefix + 'testeditar')) {
-            message.channel.fetchMessage('420154833480450048').then(message => {
+            message.channel.fetchMessage('420489858990080000').then(message => {
                 message.edit('patatua');
+            });
+        } else if (message.content.startsWith(prefix + 'testlectura')) {
+            message.channel.fetchMessage('420489858990080000').then(message => {
+                 message.channel.send(message.content);
             });
         } else if (message.content.startsWith(prefix + 'testbcomando')) {
             message.client.guilds.find("name", "Server secreto de Marco").channels.find("name", "general").sendMessage('pong');
