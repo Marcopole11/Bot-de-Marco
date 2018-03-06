@@ -180,7 +180,7 @@ client.on('message', message => {
         } else {
             salida = salida + "streamer no reconocido";
         }
-        message.guild.channels.find("name", "aviso-directos").sendMessage(salida);
+        message.guild.channels.find("name", "aviso⠐directos").sendMessage(salida);
     }
 });
 client.on('message', message => {
