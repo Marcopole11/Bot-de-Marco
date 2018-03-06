@@ -235,6 +235,9 @@ client.on("messageDelete", message => {
     let rprt = "__Mensaje eliminado__ de _" + message.author.username + "_ en " + message.channel + " \n**``" + message.content + "``**";
     message.guild.channels.find("name", "log").sendMessage(rprt);
 });
+client.on("voiceStateUpdate", (olduser, newuser) => {
+    omsg.guild.channels.find("name", "log").sendMessage("es culpa de " + newuser);
+});
 /*
 
 if (command === 'spec'){
