@@ -240,10 +240,10 @@ client.on('voiceStateUpdate', (oldMember, newMember) => {
     let oldUserChannel = oldMember.voiceChannel;
     if(oldUserChannel === undefined && newUserChannel !== undefined) {
         newMember.addRole(newMember.guild.roles.find("name", "🔊"));
-        newMember.guild.channels.find("name", "log").sendMessage("entró");
+        newMember.guild.channels.find("name", "log").sendMessage(newMember.user.username + "entró en los chats de voz");
     } else if(newUserChannel === undefined){
         newMember.removeRole(newMember.guild.roles.find("name", "🔊"));
-        newMember.guild.channels.find("name", "log").sendMessage("se fué");
+        newMember.guild.channels.find("name", "log").sendMessage(newMember.user.username + "salió de los chats de voz");
     }
 });
 /*
