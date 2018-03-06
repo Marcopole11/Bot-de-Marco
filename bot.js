@@ -198,7 +198,7 @@ client.on('message', message => {
                 "\n \n A que estás esperando? \n Pulsa aqui para unirte:  https://www.twitch.tv/marcopole";
         salida = salida + "\n \n Avisando a todos los " + message.guild.roles.find("name", "ad") + " :laughing:";
         message.guild.channels.find("name", "aviso-directos").sendMessage(salida);
-        message.guild.roles.find("name", "ad").edit({mentionable: false});
+        //message.guild.roles.find("name", "ad").edit({mentionable: false});
     }
 });
 client.on("guildMemberAdd", (member) => {
