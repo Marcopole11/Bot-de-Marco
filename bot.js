@@ -22,6 +22,8 @@ client.on('message', message => { //solo en chat de comandos
             });
         } else if (message.content.startsWith(prefix + 'testcomando')) {
             message.guild.channels.find("name", "canal-r37j").sendMessage('pong');
+        } else if (message.content.startsWith(prefix + 'testunique')) {
+            message.guild.roles.find("name", "ad").edit({mentionable: false});
         } else if (message.content.startsWith(prefix + 'testcontar')) {
             message.channel.fetchMessages({ limit: 10 }).then(messages => {
                 messages.forEach(m=> {
