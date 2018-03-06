@@ -40,9 +40,10 @@ client.on('message', message => { //solo en chat de comandos
         } else if (message.content.startsWith(prefix + 'testlectura')) {
             let enviar = "ERROR";
             message.channel.fetchMessage('420489858990080000').then(message => {
-                 enviar = message.content;
+                 //enviar = message.content;
+                message.channel.send(enviar);
             });
-            message.channel.send(enviar);
+            
         } else if (message.content.startsWith(prefix + 'testbcomando')) {
             message.client.guilds.find("name", "Server secreto de Marco").channels.find("name", "general").sendMessage('pong');
         } else if (message.content.startsWith(prefix + 'testaviso')) {
