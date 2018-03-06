@@ -149,10 +149,11 @@ client.on('message', message => {
                 envio = (envio + "\n" + entrada[lain]);
             }
         }
+        
         message.channel.send(envio).then(m => {
-            //for(opt = 0; opt < 3; opt++{
+            for(let opt = 0; opt < 3; opt++){
                 m.react(m.client.guilds.find("name", "Server secreto de Marco").emojis.find("name", "Oland_flag"));
-            //}
+            }
         });
     }
 });
