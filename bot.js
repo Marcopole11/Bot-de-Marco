@@ -59,7 +59,7 @@ client.on('message', message => { //solo en chat de comandos
             message.channel.sendMessage('Para que preguntas eso? \nMis comandos están en los mensajes anclados de este canal.');
         } else if (message.content.startsWith(prefix + 'help') || message.content.startsWith(prefix + 'info')) {
             message.channel.sendMessage('Yo? pues... aún no tengo nombre...');
-            message.channel.sendMessage('Soy un Bot creado por ᴍᴀʀᴄᴏᴩᴏʟᴇ mediante javascript y Discord.js\nAhora mismo estoy en la versión 0.0.11, puedes ver mi proceso en '
+            message.channel.sendMessage('Soy un Bot creado por ᴍᴀʀᴄᴏᴩᴏʟᴇ mediante javascript y Discord.js\nAhora mismo estoy en la versión 0.0.12, puedes ver mi proceso en '
                 + message.guild.channels.find("name", "proceso-del-bot") + "\n _Marcopole, actualizame! >:c_");
         } else if (message.content.startsWith(prefix + 'hentai')) {
             const kap = [
