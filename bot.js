@@ -52,6 +52,12 @@ client.on('message', message => { //solo en chat de comandos
             message.guild.channels.find("name", "chat-principal").sendMessage('Porque nadie se mueve \:cold_sweat:');
         } else if (message.content.startsWith(prefix + 'testsay')) {
             message.guild.channels.find("name", "chat-principal").sendMessage(message.content.slice(10));
+        } else if (message.content.startsWith(prefix + 'testvoice')) {
+            if(message.content.startsWith(prefix + 'testvoiceve')){
+               message.guild.channels.find("name", "Canales de voz").join();
+           } else {
+               message.guild.channels.find("name", "Canales de voz").leave();
+           }
         } else if (message.content.startsWith(prefix + 'analiza')) {
             message.channel.sendMessage('Tu id es ' + message.author.id);
         } else if (message.content.startsWith(prefix + 'tierna')) {
