@@ -56,11 +56,11 @@ client.on('message', message => { //solo en chat de comandos
             if(message.content.startsWith(prefix + 'testvoiceven')){
                message.member.voiceChannel.join();
             } else if(message.content.startsWith(prefix + 'testvoiceve')){
-               message.guild.channels.find("name", "Canales de voz").join();
+               message.guild.channels.get("383589689296158725").join();
             } else if(message.content.startsWith(prefix + 'testvoicedime')){
                 message.channel.sendMessage(message.member.voiceChannelID);
             } else {
-               message.guild.channels.find("name", "Canales de voz").leave();
+               message.guild.channels.get("383589689296158725").leave();
            }
         } else if (message.content.startsWith(prefix + 'analiza')) {
             message.channel.sendMessage('Tu id es ' + message.author.id);
