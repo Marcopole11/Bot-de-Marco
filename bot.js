@@ -51,7 +51,7 @@ client.on('message', message => { //solo en chat de comandos
             message.guild.channels.find("name", "chat-principal").sendMessage('...');
             message.guild.channels.find("name", "chat-principal").sendMessage('Porque nadie se mueve \:cold_sweat:');
         } else if (message.content.startsWith(prefix + 'testsay')) {
-            message.guild.channels.find("name", "chat-principal").sendMessage(message.content.slice(10));
+            message.channel.sendMessage(message.content.slice(10));
         } else if (message.content.startsWith(prefix + 'testvoice')) {
             if(message.content.startsWith(prefix + 'testvoiceven')){
                message.member.voiceChannel.join();
