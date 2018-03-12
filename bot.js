@@ -58,7 +58,7 @@ client.on('message', message => { //solo en chat de comandos
             } else if(message.content.startsWith(prefix + 'testvoiceve')){
                message.guild.channels.find("name", "Canales de voz").join();
             } else if(message.content.startsWith(prefix + 'testvoicedime')){
-                message.channel.sendMessage(message.member.voiceChannel.voiceChannelID);
+                message.channel.sendMessage(message.member.voiceChannelID);
             } else {
                message.guild.channels.find("name", "Canales de voz").leave();
            }
