@@ -56,7 +56,7 @@ client.on('message', message => { //solo en chat de comandos
             if(message.content.startsWith(prefix + 'testvoiceven')){
                message.member.voiceChannel.join();
             } else if(message.content.startsWith(prefix + 'testvoiceve')){
-               message.channel.sendMessage(message.guild.channels.get("383589689296158725").name);
+               message.channel.sendMessage(message.guild.channels.get("383589689296158725").joinable);
             } else if(message.content.startsWith(prefix + 'testvoicedime')){
                 message.channel.sendMessage(message.member.voiceChannelID);
             } else {
