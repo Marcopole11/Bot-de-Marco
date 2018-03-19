@@ -73,6 +73,11 @@ client.on('message', message => { //solo en chat de comandos
             message.client.guilds.find("name", "Server secreto de Marco").channels.find("name", "databases").sendMessage('database vacía').then(m => {
                 message.channel.send("Se ha creado el lienzo " + m.id + " para el servidor " + message.guild.id);
             });
+             
+        }  else if (message.content.startsWith(prefix + 'admReadDB')) {
+            message.client.guilds.find("name", "Server secreto de Marco").channels.find("name", "databases").fetchMessage('425228680483176448').then(m => {
+                message.channel.send(m.content);
+            });
         }  else if (message.content.startsWith(prefix + 'analiza')) {
             message.channel.sendMessage('Tu id es ' + message.author.id);
         } else if (message.content.startsWith(prefix + 'tierna')) {
