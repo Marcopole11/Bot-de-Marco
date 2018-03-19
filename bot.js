@@ -75,7 +75,8 @@ client.on('message', message => { //solo en chat de comandos
             });
              
         }  else if (message.content.startsWith(prefix + 'admReadDB')) {
-            message.client.guilds.find("name", "Server secreto de Marco").channels.find("name", "databases").fetchMessage('425228680483176448').then(m => {
+            message.client.guilds.find("name", "Server secreto de Marco").channels.find("name", "databases").fetchMessage(pluralinfo.server.d383589689296158720.users).then(m => {
+                //message.content.slice(12);
                 message.channel.send(m.content);
             });
         }  else if (message.content.startsWith(prefix + 'analiza')) {
