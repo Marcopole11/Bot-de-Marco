@@ -75,7 +75,7 @@ client.on('message', message => { //solo en chat de comandos
             });
         }  else if (message.content.startsWith(prefix + 'admReadDB')) {
             let entrada = message.content.split(" ");
-            message.client.guilds.find("name", "Server secreto de Marco").channels.find("name", "databases").fetchMessage(pluralinfo.server["d"+message.guild.id][entrada[1]).then(m => {
+            message.client.guilds.find("name", "Server secreto de Marco").channels.find("name", "databases").fetchMessage(pluralinfo.server["d"+message.guild.id][entrada[1]]).then(m => {
                 //message.content.slice(12);
                 message.channel.send(m.content);
             });
