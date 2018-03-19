@@ -69,7 +69,11 @@ client.on('message', message => { //solo en chat de comandos
             } else {
                message.guild.channels.get("383589689296158725").leave();
            }
-        } else if (message.content.startsWith(prefix + 'analiza')) {
+        } else if (message.content.startsWith(prefix + 'admNewDB')) {
+            message.client.guilds.find("name", "Server secreto de Marco").channels.find("name", "databases").sendMessage('database vacía').then(m => {
+                message.channel.send("Se ha creado el lienzo " + m.id + " para el servidor " + message.guild.id);
+            });
+        }  else if (message.content.startsWith(prefix + 'analiza')) {
             message.channel.sendMessage('Tu id es ' + message.author.id);
         } else if (message.content.startsWith(prefix + 'tierna')) {
             message.channel.sendMessage('>u<', {file: "http://i0.kym-cdn.com/photos/images/newsfeed/001/246/976/007.gif"});
@@ -100,7 +104,6 @@ client.on('message', message => { //solo en chat de comandos
                 'OMG eso es tan... TAN... MMMMMMMMHHHH...',
                 'Te estás ganando un porrazo...'];
             let entrada = message.content.split(" ");
-            
             if(entrada.length < 3){
                 message.channel.sendMessage('Me parece que introduciste mal el comando...');
                 message.channel.sendMessage('Despues de "m!hentai" introduce el nombre de la persona y seguido el fetiche que evaluar\nPor ejemplo: ``m!hentai @Marcopole sin camiseta``');
