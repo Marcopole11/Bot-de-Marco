@@ -1,6 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
+
 client.on('ready', () => {
     console.log('I am ready!');
 });
@@ -13,6 +14,8 @@ client.on('message', message => { //solo en chat de comandos
         } else if (message.content.startsWith(prefix + 'test') && message.author.id != '192007091169263616') {
             message.channel.send("Marcopole no me deja que uses ese comando" +
                 message.client.guilds.find("name", "Server secreto de Marco").emojis.find("name", "botsad"));
+        } else if (message.content.startsWith(prefix + 'adm') && message.author.id != '192007091169263616') {
+            message.channel.send("Solo Marcopole puede usar comandos de administrador");
         } else if (message.content.startsWith(prefix + 'emote')) {
             //message.react(message.client.guilds.find("name", "Server secreto de Marco").emojis.find("name", "Oland_flag"));
             //message.react(message.guild.emojis.find("name", "wagame"));
