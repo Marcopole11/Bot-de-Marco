@@ -37,7 +37,7 @@ client.on('message', message => { //solo en chat de comandos
              });
             message.channel.send("hola");
         } else if (message.content.startsWith(prefix + 'testjson')) {
-             message.channel.send(config.textoprueba);
+             message.channel.send(pluralinfo.textoprueba);
         } else if (message.content.startsWith(prefix + 'testeditar')) {
             message.channel.fetchMessage('420489858990080000').then(message => {
                 message.edit('patatua');
