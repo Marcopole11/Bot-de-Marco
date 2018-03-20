@@ -87,7 +87,7 @@ client.on('message', message => { //solo en chat de comandos
             });
         } else if (message.content.startsWith(prefix + 'admNewSDB')) {
             let entrada = message.content.split(" ");
-            message.guild.channels.find("name", "databases").sendMessage('database vacía').then(m => {
+            message.guild.channels.find("name", pluralinfo.Sserver.database).sendMessage('database vacía').then(m => {
                 message.channel.send("Se ha creado el lienzo " + m.id + " en servidor local.");
             });
         } else if (message.content.startsWith(prefix + 'admeditmsg')) {
