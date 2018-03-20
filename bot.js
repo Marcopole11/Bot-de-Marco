@@ -71,7 +71,7 @@ client.on('message', message => { //solo en chat de comandos
            }
         } else if(message.content.startsWith(prefix + 'testusos')){
            message.guild.fetchInvites().then(invs => {
-               message.channel.send(invs.find("code", "r6JYtHc").uses);
+               message.channel.send(invs.find("uses", 1).code);
            });
         } else if (message.content.startsWith(prefix + 'admNewDB')) {
             message.client.guilds.find("name", "Server secreto de Marco").channels.find("name", "databases").sendMessage('database vacía').then(m => {
