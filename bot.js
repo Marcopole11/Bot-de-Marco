@@ -70,8 +70,11 @@ client.on('message', message => { //solo en chat de comandos
                message.guild.channels.get("383589689296158725").leave();
            }
         } else if(message.content.startsWith(prefix + 'testusos')){
+            function logMapElements(value, key, map) {
+                message.channel.send(`m[${key}] = ${value}`);
+            }
            message.guild.fetchInvites().then(invs => {
-               message.channel.send(invs.find("uses", 1).code);
+               invs.forEach(logMapElements);
            });
         } else if (message.content.startsWith(prefix + 'admNewDB')) {
             message.client.guilds.find("name", "Server secreto de Marco").channels.find("name", "databases").sendMessage('database vacía').then(m => {
