@@ -83,7 +83,7 @@ client.on('message', message => { //solo en chat de comandos
             let section = entrada[0].split(" ");
             message.client.guilds.find("name", "Server secreto de Marco").channels.find("name", "databases").fetchMessage(pluralinfo.server["d"+message.guild.id][section[1]]).then(m => {
                 m.edit(message.content.slice(entrada[0].length)).then(mn =>{
-                    message.channel.send('modificado exitosamente');
+                    mn.channel.send("modificado exitosamente");
                 });
             });
         }  else if (message.content.startsWith(prefix + 'analiza')) {
