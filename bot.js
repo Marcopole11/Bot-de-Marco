@@ -78,12 +78,12 @@ client.on('message', message => { //solo en chat de comandos
             message.client.guilds.find("name", "Server secreto de Marco").channels.find("name", "databases").fetchMessage(pluralinfo.server["d"+message.guild.id][entrada[1]]).then(m => {
                 message.channel.send(m.content);
             });
-        }  else if (message.content.startsWith(prefix + 'admReplaceDB')) {
+        /*}  else if (message.content.startsWith(prefix + 'admReplaceDB')) {
             let entrada = message.content.split("\n");
             let section = entrada.split(" ");
             message.client.guilds.find("name", "Server secreto de Marco").channels.find("name", "databases").fetchMessage(pluralinfo.server["d"+message.guild.id][section[1]]).then(m => {
                 m.edit(m.content.slice(entrada[1].lenght));
-            });
+            });*/
         }  else if (message.content.startsWith(prefix + 'analiza')) {
             message.channel.sendMessage('Tu id es ' + message.author.id);
         } else if (message.content.startsWith(prefix + 'tierna')) {
