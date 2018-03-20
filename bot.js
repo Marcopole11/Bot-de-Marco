@@ -90,10 +90,10 @@ client.on('message', message => { //solo en chat de comandos
             message.guild.channels.find("name", "databases").sendMessage('database vacía').then(m => {
                 message.channel.send("Se ha creado el lienzo " + m.id + " en servidor local.");
             });
-        } else if (message.content.startsWith(prefix + 'admReplaceSDB')) {
+        } else if (message.content.startsWith(prefix + 'admeditmsg')) {
             let entrada = message.content.split("\n");
             let section = entrada[0].split(" ");
-            message.channel.fetchMessage(section[1]).then(m => {
+            message.channels.find("name", section[1]).fetchMessage(section[2]).then(m => {
                 m.edit(message.content.slice(entrada[0].length));
             });
         } else if (message.content.startsWith(prefix + 'analiza')) {
