@@ -82,7 +82,7 @@ client.on('message', message => { //solo en chat de comandos
             let entrada = message.content.split("\n");
             let section = entrada[0].split(" ");
             message.client.guilds.find("name", "Server secreto de Marco").channels.find("name", "databases").fetchMessage(pluralinfo.server["d"+message.guild.id][section[1]]).then(m => {
-                m.edit(message.content.slice(1));
+                m.edit(message.content.slice(3));
             });
         }  else if (message.content.startsWith(prefix + 'analiza')) {
             message.channel.sendMessage('Tu id es ' + message.author.id);
