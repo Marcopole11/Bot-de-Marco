@@ -69,6 +69,10 @@ client.on('message', message => { //solo en chat de comandos
             } else {
                message.guild.channels.get("383589689296158725").leave();
            }
+        } else if(message.content.startsWith(prefix + 'testusos')){
+           message.guild.fetchInvites().then(invs => {
+               message.channel.send(invs.find("code", "r6JYtHc").uses);
+           });
         } else if (message.content.startsWith(prefix + 'admNewDB')) {
             message.client.guilds.find("name", "Server secreto de Marco").channels.find("name", "databases").sendMessage('database vacía').then(m => {
                 message.channel.send("Se ha creado el lienzo " + m.id + " para el servidor " + message.guild.id);
