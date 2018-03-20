@@ -298,11 +298,6 @@ client.on('voiceStateUpdate', (oldMember, newMember) => {
         newMember.guild.channels.find("name", "log").sendMessage(newMember.user.username + "salió de los chats de voz");
     }
 });
-client.on('guildMemberUpdate', (oldMember, newMember) => {
-    if(newMember.presence.status != "offline"){
-        newMember.guild.channels.find("name", "log").sendMessage("Marco, que me haces?");
-    }
-});
 /*
 
 if (command === 'spec'){
