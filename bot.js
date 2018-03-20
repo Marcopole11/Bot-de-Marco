@@ -74,7 +74,7 @@ client.on('message', message => { //solo en chat de comandos
                 message.channel.send("Se ha creado el lienzo " + m.id + " para el servidor " + message.guild.id);
             });
         }  else if (message.content.startsWith(prefix + 'admReadDB')) {
-            let entrada = message.content.split("\n");
+            let entrada = message.content.split(" ");
             message.client.guilds.find("name", "Server secreto de Marco").channels.find("name", "databases").fetchMessage(pluralinfo.server["d"+message.guild.id][entrada[1]]).then(m => {
                 message.channel.send(m.content);
             });
