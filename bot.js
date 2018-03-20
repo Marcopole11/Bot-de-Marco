@@ -73,19 +73,30 @@ client.on('message', message => { //solo en chat de comandos
             message.client.guilds.find("name", "Server secreto de Marco").channels.find("name", "databases").sendMessage('database vacía').then(m => {
                 message.channel.send("Se ha creado el lienzo " + m.id + " para el servidor " + message.guild.id);
             });
-        }  else if (message.content.startsWith(prefix + 'admReadDB')) {
+        } else if (message.content.startsWith(prefix + 'admReadDB')) {
             let entrada = message.content.split(" ");
             message.client.guilds.find("name", "Server secreto de Marco").channels.find("name", "databases").fetchMessage(pluralinfo.server["d"+message.guild.id][entrada[1]]).then(m => {
                 message.channel.send(m.content);
             });
-        }  else if (message.content.startsWith(prefix + 'admReplaceDB')) {
+        } else if (message.content.startsWith(prefix + 'admReplaceDB')) {
             let entrada = message.content.split("\n");
             let section = entrada[0].split(" ");
             message.client.guilds.find("name", "Server secreto de Marco").channels.find("name", "databases").fetchMessage(pluralinfo.server["d"+message.guild.id][section[1]]).then(m => {
                 m.edit(message.content.slice(entrada[0].length));
                 message.channel.send("modificado exitosamente");
-            }).catch(console.error);
-        }  else if (message.content.startsWith(prefix + 'analiza')) {
+            });
+        } else if (message.content.startsWith(prefix + 'admNewSDB')) {
+            let entrada = message.content.split(" ");
+            message.guild.channels.find("name", "databases").sendMessage('database vacía').then(m => {
+                message.channel.send("Se ha creado el lienzo " + m.id + " en servidor local.");
+            });
+        } else if (message.content.startsWith(prefix + 'admReplaceDB')) {
+            let entrada = message.content.split("\n");
+            let section = entrada[0].split(" ");
+            message.channel.fetchMessage(section[1]).then(m => {
+                m.edit(message.content.slice(entrada[0].length));
+            });
+        } else if (message.content.startsWith(prefix + 'analiza')) {
             message.channel.sendMessage('Tu id es ' + message.author.id);
         } else if (message.content.startsWith(prefix + 'tierna')) {
             message.channel.sendMessage('>u<', {file: "http://i0.kym-cdn.com/photos/images/newsfeed/001/246/976/007.gif"});
