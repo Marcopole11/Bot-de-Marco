@@ -1,7 +1,7 @@
 {
   "name": "marcoBot",
-  "description": "Empezando a crear el futuro bot de Marcopole",
-  "version": "0.0.12",
+  "description": "Bot que administra el servidor de Marcopole",
+  "version": "0.1.01",
   "main": "bot.js",
   "scripts": {
     "start": "node bot.js"
